@@ -1,7 +1,8 @@
 1.Node.js中的交互式运行环境 —— REPL(Read-Eval-Print-Loop)
     点击运行输入cmd进入cmd程序输入"node"按下回车即进入REPL运行环境，命令行中将显示REPL运行环境的命令提示符(默认为">").
 
-2.node 配置环境需要安装git bash(就是安装git这个软件) 和 nodeJS，如果安装完毕，在cmd中输入node -v 显示版本号就代表安装成功了，当然打开git bash 输入 node -v 显示版本号也代表安装成功了。 在git bash中输入npm -v显示npm的版本号。 (git bash 集成在git里面，是git的一个子模块)
+2.node 配置环境需要安装git bash(就是安装git这个软件) 和 nodeJS，如果安装完毕，在cmd中输入node -v 显示版本号就代表安装成功了，
+当然打开git bash 输入 node -v 显示版本号也代表安装成功了。 在git bash中输入npm -v显示npm的版本号。 (git bash 集成在git里面，是git的一个子模块)
 2.npm是一个node包管理和分发工具，新版的nodejs已经集成了npm包管理工具。有了npm，可以很快的找到特定服务要使用的包，进行下载、安装以及管理已经安装的包。
 2-2.把git添加到系统环境变量path中，计算机-->属性-->高级系统设置-->环境变量-->系统变量-->path-->添加: ;C:\Program Files\Git\bin 成功之后
     在cmd中输入git就会看到这样的提示: usage: git[--version][--help]...这些提示代码
@@ -56,7 +57,8 @@
     3.3.2 __dirname变量: 获取当前模块文件所在目录的完整绝对路径。
 
 3.4 事件处理机制及事件环机制
-    3.4.1 EventEmitter类: 在Node.js的用于实现各种事件处理的event模块中，定义了一个EventEmitter类。所有可能触发事件的对象都是一个继承了EventEmitter类的子类的实例对象。
+    3.4.1 EventEmitter类: 在Node.js的用于实现各种事件处理的event模块中，定义了一个EventEmitter类。
+            所有可能触发事件的对象都是一个继承了EventEmitter类的子类的实例对象。
         EventEmitter类的各种方法:(event代表事件名，listener代表事件处理函数，中括号内的为可选参数)
             addListener(event, listener) : 对指定事件绑定事件处理函数(一般都用下面的on方法)
             on(event,listener) : 对指定事件绑定事件处理函数
