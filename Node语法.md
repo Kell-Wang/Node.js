@@ -3,7 +3,7 @@
 
 ### 2.node 配置环境需要安装git bash(就是安装git这个软件) 和 nodeJS，如果安装完毕，在cmd中输入node -v 显示版本号就代表安装成功了。
    当然打开git bash 输入 node -v 显示版本号也代表安装成功了。 在git bash中输入npm -v显示npm的版本号。 (git bash 集成在git里面，是git的一个子模块) <br>
-    npm是一个node包管理和分发工具，新版的nodejs已经集成了npm包管理工具。有了npm，可以很快的找到特定服务要使用的包，进行下载、安装以及管理已经安装的包。
+    npm是一个node包管理和分发工具，新版的nodejs已经集成了npm包管理工具。有了npm，可以很快的找到特定服务要使用的包，进行下载、安装以及管理已经安装的包。<br>
 ### 2-2.把git添加到系统环境变量path中，计算机-->属性-->高级系统设置-->环境变量-->系统变量-->path-->添加: ;C:\Program Files\Git\bin 
    成功之后在cmd中输入git就会看到这样的提示: usage: git[--version][--help]...这些提示代码
 
@@ -17,9 +17,14 @@
 
 ### 1.phpstorm中如果配置好了nodejs和npm安装包之后就可以直接在当前nodejs文件右键 Run'xxx.js' 运行当前文件了，
    因为差不多这个运行环境就相当于一个 cmd命令窗口 加 node.js中的控制台 的合体。
+   
+### 在phpstorm/IntelliJ IDEA中安装nodejs解释器：
+   安装组件 (1)用npm安装nodejs需要的模块组件: File -> Setting -> Plugins -> Browse repositories... <br>
+   (2)然后在Settings -- Languages & Frameworks -- Node.js and NPM中配置Node interpreter（node解释程序）：<bfr>
+   C:\Program Files\nodejs\node.exe(就是node在C盘的安装路径),如果此时没有安装node的核心模块，会提示让在线安装，确定就好了。下面的experss(代理)应该就是显示的版本号。-----下面的Coding assistance(编码助手)记得打开。 enabled:激活的。Disable：禁止。 <br>
+   (3).在Settings -- Languages & Frameworks -- JavaScript -- libraries(库) -- 添加nodejs的核心模块. 
 
-
-
+ 
 ### 第三章的方法：<node.js 基础知识>
 #### 3.1 node.js中的控制台： <br/>
 ###### 3.1.1 console.log() 方法：用于进行标准输出流的输出，即在控制台中显示一行字符串。
