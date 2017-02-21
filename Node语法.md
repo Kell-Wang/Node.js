@@ -1,33 +1,32 @@
-1.Node.js中的交互式运行环境 —— REPL(Read-Eval-Print-Loop)
-    点击运行输入cmd进入cmd程序输入"node"按下回车即进入REPL运行环境，命令行中将显示REPL运行环境的命令提示符(默认为">").
+### 1.Node.js中的交互式运行环境 —— REPL(Read-Eval-Print-Loop)
+   点击运行输入cmd进入cmd程序输入"node"按下回车即进入REPL运行环境，命令行中将显示REPL运行环境的命令提示符(默认为">").
 
-2.node 配置环境需要安装git bash(就是安装git这个软件) 和 nodeJS，如果安装完毕，在cmd中输入node -v 显示版本号就代表安装成功了，
-当然打开git bash 输入 node -v 显示版本号也代表安装成功了。 在git bash中输入npm -v显示npm的版本号。 (git bash 集成在git里面，是git的一个子模块)
-2.npm是一个node包管理和分发工具，新版的nodejs已经集成了npm包管理工具。有了npm，可以很快的找到特定服务要使用的包，进行下载、安装以及管理已经安装的包。
-2-2.把git添加到系统环境变量path中，计算机-->属性-->高级系统设置-->环境变量-->系统变量-->path-->添加: ;C:\Program Files\Git\bin 成功之后
-    在cmd中输入git就会看到这样的提示: usage: git[--version][--help]...这些提示代码
+### 2.node 配置环境需要安装git bash(就是安装git这个软件) 和 nodeJS，如果安装完毕，在cmd中输入node -v 显示版本号就代表安装成功了。
+   当然打开git bash 输入 node -v 显示版本号也代表安装成功了。 在git bash中输入npm -v显示npm的版本号。 (git bash 集成在git里面，是git的一个子模块) <br>
+    npm是一个node包管理和分发工具，新版的nodejs已经集成了npm包管理工具。有了npm，可以很快的找到特定服务要使用的包，进行下载、安装以及管理已经安装的包。
+### 2-2.把git添加到系统环境变量path中，计算机-->属性-->高级系统设置-->环境变量-->系统变量-->path-->添加: ;C:\Program Files\Git\bin 
+   成功之后在cmd中输入git就会看到这样的提示: usage: git[--version][--help]...这些提示代码
 
-3.在cmd中运行nodejs文件需要先用dos命令进入到保存nodejs的文件夹后在输入node xxx.js启动运行代码。
+### 3.在cmd中运行nodejs文件需要先用dos命令进入到保存nodejs的文件夹后在输入node xxx.js启动运行代码。
 
-4.在cmd中端口被占用的代码提示为 throw er; //Unhandled 'error' event。
+### 4.在cmd中端口被占用的代码提示为 throw er; //Unhandled 'error' event。
 
-5.如果更新了了nodejs文件需要cmd中ctrl+c停掉当前的运行状态，然后node xxx.js 从新运行。
-
-
-
-*1.phpstorm中如果配置好了nodejs和npm安装包之后就可以直接在当前nodejs文件右键 Run'xxx.js' 运行当前文件了，
-    因为差不多这个运行环境就相当于一个 cmd命令窗口 加 node.js中的控制台 的合体。
+### 5.如果更新了了nodejs文件需要cmd中ctrl+c停掉当前的运行状态，然后node xxx.js 从新运行。
 
 
 
-第三章的方法：<node.js 基础知识>
-3.1 node.js中的控制台：
-    3.1.1 console.log() 方法：用于进行标准输出流的输出，即在控制台中显示一行字符串。
-    3.1.2 console.error()方法：用于进行标准错误输出流的输出，即向控制台中输出一行错误信息。
-    3.1.3 console.dir() : 用于查看一个对象中的内容并且将该对象的信息输出到控制台中。
-    3.1.4 console.time()和 console.timeEnd(): 用于记录一段代码开始和结束之间的毫秒数，并输出到控制台中。
-            console.time(label)
-            console.timeEnd(label); 这两个方法均使用一个参数，参数值可以为任何字符串，但是这两个方法所使用的参数
+### *1.phpstorm中如果配置好了nodejs和npm安装包之后就可以直接在当前nodejs文件右键 Run'xxx.js' 运行当前文件了，
+   因为差不多这个运行环境就相当于一个 cmd命令窗口 加 node.js中的控制台 的合体。
+
+
+
+### 第三章的方法：<node.js 基础知识>
+#### 3.1 node.js中的控制台：
+ ###### 3.1.1 console.log() 方法：用于进行标准输出流的输出，即在控制台中显示一行字符串。
+ ###### 3.1.2 console.error()方法：用于进行标准错误输出流的输出，即向控制台中输出一行错误信息。
+ ###### 3.1.3 console.dir() : 用于查看一个对象中的内容并且将该对象的信息输出到控制台中。
+ ###### 3.1.4 console.time()和 console.timeEnd(): 用于记录一段代码开始和结束之间的毫秒数，并输出到控制台中。
+            console.time(label) console.timeEnd(label); 这两个方法均使用一个参数，参数值可以为任何字符串，但是这两个方法所使用的参数
             字符串必须相同，才能正确地统计出开始时间和结束时间之间所经过的毫秒数。示例如下:
                 console.time("small loop");
                 for(var i=0; i<100000, i++){
@@ -35,29 +34,29 @@
                 }
                 console.timeEnd("small loop");
 
-    3.1.5 console.trace(): 用于将当前位置处的栈信息作为标准错误信息进行输出，使用方法如下：
+ ###### 3.1.5 console.trace(): 用于将当前位置处的栈信息作为标准错误信息进行输出，使用方法如下：
                console.trace(label) 参数值可以为任意字符串，用于标识此处输出的标准错误信息。
-    3.1.6 console.assert(): 用于对一个表达式的执行结果进行评估，如果该表达式的执行结果为false,则输出一个消息
+ ###### 3.1.6 console.assert(): 用于对一个表达式的执行结果进行评估，如果该表达式的执行结果为false,则输出一个消息
                             字符串并抛出AssertinoErro异常。
 
-3.2 Node.js中的全局作用域及全局函数
-    3.2.1 Node.js中的全局作用域 : console.log(global);//global下面出现的函数和方法是都不需要用require()方法来请求的。
-    3.2.2 setTimeout()和clearTimeout()函数
-    3.2.3 setInterval()函数和clearInterval()函数
-    3.2.4 定时器对象的unref()方法和 ref()方法 ：setTimeout函数和setInteval函数均返回一个定时器对象。在node.js
+#### 3.2 Node.js中的全局作用域及全局函数
+ ###### 3.2.1 Node.js中的全局作用域 : console.log(global);//global下面出现的函数和方法是都不需要用require()方法来请求的。
+ ###### 3.2.2 setTimeout()和clearTimeout()函数
+ ###### 3.2.3 setInterval()函数和clearInterval()函数
+ ###### 3.2.4 定时器对象的unref()方法和 ref()方法 ：setTimeout函数和setInteval函数均返回一个定时器对象。在node.js
            为定时器对象定义了unref方法与一个ref方法。unref()方法是取消超时和间歇函数的调用，ref()方法是再次
            执行超时和间歇调用。
-    3.2.5 与模块相相关的全局函数及对象
+ ###### 3.2.5 与模块相相关的全局函数及对象
         1.使用 require()函数加载模块
         2.使用 require.resolve()函数查询完整模块名
         3.require.cache对象，该对象代表缓存了所有已被加载模块的缓存区。//console.log(require.cache);
 
-3.3 __filename变量与__dirnam变量
-    3.3.1 __filename变量: 获取当前模块文件的带有完整绝对路径的文件名。
-    3.3.2 __dirname变量: 获取当前模块文件所在目录的完整绝对路径。
+#### 3.3 __filename变量与__dirnam变量
+ ###### 3.3.1 __filename变量: 获取当前模块文件的带有完整绝对路径的文件名。
+ ###### 3.3.2 __dirname变量: 获取当前模块文件所在目录的完整绝对路径。
 
-3.4 事件处理机制及事件环机制
-    3.4.1 EventEmitter类: 在Node.js的用于实现各种事件处理的event模块中，定义了一个EventEmitter类。
+#### 3.4 事件处理机制及事件环机制
+ ###### 3.4.1 EventEmitter类: 在Node.js的用于实现各种事件处理的event模块中，定义了一个EventEmitter类。
             所有可能触发事件的对象都是一个继承了EventEmitter类的子类的实例对象。
         EventEmitter类的各种方法:(event代表事件名，listener代表事件处理函数，中括号内的为可选参数)
             addListener(event, listener) : 对指定事件绑定事件处理函数(一般都用下面的on方法)
@@ -68,8 +67,8 @@
             setMaxListeners(n) : 指定事件处理函数的最大数量。n为整数值，代表最大的可指定事件处理函数的数量。
             listeners(event) : 获取指定事件的所有事件处理函数
             emit(event,[arg1],[arg2],[...]) : 手工触发指定事件。
-    3.4.2 EventEmitter类的各个方法
-    3.4.3 EventEmitter类自身拥有一个listenerCount()方法 : 用来获取某个对象的指定事件的事件处理函数的数量。
+ ###### 3.4.2 EventEmitter类的各个方法
+ ###### 3.4.3 EventEmitter类自身拥有一个listenerCount()方法 : 用来获取某个对象的指定事件的事件处理函数的数量。
 
 
 
