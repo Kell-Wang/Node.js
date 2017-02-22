@@ -1,5 +1,4 @@
-
-/** from 2017/2/21 **/
+/** 2017/2/21 - 2/22 **/
 
 /*var http = require("http"); //引用http模块
  var server = http.createServer(); //创建http服务器并将该服务器复制给变量server
@@ -20,17 +19,17 @@ var server = http.createServer();
 server.on("request", function(req, res){
     res.writeHead(200, {"Content-type": "text/html"});
     res.write("<head><meta charset='UTF-8'/></head>");
-    res.write("<h2>看得到的部分用response.write写入</h2>");
+    res.write("<h2>看得到的部分用response.write写入,当然response.end()也可以写入</h2>");
     res.end("结束");
     console.log("第一次执行语句");
 });
 server.on("request", function(req, res){
     console.log("第二次执行语句");
-    res.end();
+    res.end("第二次执行代码结束");
 });
 server.on("request", function(req, res){
     console.log("第三次执行语句");
-    res.end();
+    res.end("第三次执行代码结束");
 });
 server.listen(1378, "127.0.0.1");
 console.log(events.EventEmitter.listenerCount(server, "request"));
