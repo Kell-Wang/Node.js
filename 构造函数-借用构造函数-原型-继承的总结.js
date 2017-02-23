@@ -6,16 +6,16 @@
  */
 
 /*------js高级 "6.3.3 组合继承" 示例， P168--------*/
-function FatherFun(name){
+function FatherFun(name) {
     this.name = name;
     this.colors = ["red", "blue", "green"];
 }
 
 //-------正常在原型上添加方法的写法-------
-FatherFun.prototype.sayName= function(){
+FatherFun.prototype.sayName = function () {
     console.log(this.name);  // Father function name
 };
-FatherFun.prototype.outputColors= function(){
+FatherFun.prototype.outputColors = function () {
     console.log(this.colors);  // ["red", "blue", "green"]
 };
 //-------正常在原型上添加方法的写法-------
@@ -25,7 +25,7 @@ fatherFunIns.sayName();
 fatherFunIns.outputColors();
 
 
-function SonFun(name, age){
+function SonFun(name, age) {
     //继承FatherFun构造函数的属性
     FatherFun.call(this, name);
     this.age = age;
@@ -33,7 +33,7 @@ function SonFun(name, age){
 //继承FatherFun构造函数原型上的方法
 SonFun.prototype = new FatherFun(); // 调用FatherFun构造函数,赋值给SonFun构造函数的原型(SonFun.prototype)
 SonFun.prototype.constructor = SonFun;  //SonFun构造函数的constructor属性还指向SonFun
-SonFun.prototype.sayAge = function(){
+SonFun.prototype.sayAge = function () {
     console.log(this.age);
 };
 var sonFunIns1 = new SonFun("Nicholas", 29); //创建SonFun构造函数的实例，
@@ -47,39 +47,61 @@ console.log(sonFunIns2.colors);  //["red", "blue", "green"]
 sonFunIns2.sayName();    //Greg
 sonFunIns2.sayAge();    //27
 
+console.log("---------------------------------------------------------");
+
 /*------js高级 "6.3.3 组合继承" 示例， P168--------*/
 
 
 /**prototype中面向对象的写法大致是这样写的**/
-function NativeTabSwitch(){
+function NativeTabSwitch() {
     this.initialize.apply(this, arguments);
 }
 
 NativeTabSwitch.prototype = {
-  initialize: function(myName, myAge){
-      this.myName = myName;
-      this.myAge = myAge;
-  }
+    initialize: function (myName, myAge) {
+        this.myName = myName;
+        this.myAge = myAge;
+    },
+    consoleName: function(){
+        console.log(this.myName);
+    },
+    consoleAge: function(){
+        console.log(this.myAge);
+    }
 };
 
 var myName = "My name is Nicholas";
 var myAge = "My age is 32 years old";
 var nativeTabSwiIns = new NativeTabSwitch(myName, myAge);
+nativeTabSwiIns.consoleName();
+nativeTabSwiIns.consoleAge();
 /**prototype中面向对象的写法大致是这样写的**/
 
 
+console.log("---------------------------------------------------------");
+
 /**jQuery中面向对象的写法是这样写的**/
-function jQuery(selector, context){
-    return new jQuery.prototype.init(selector, context, rootjQuery);
+function jQuery(myName, myAge) {
+    return new jQuery.prototype.init(myName, myAge);
 }
+
+jQuery.prototype.init.prototype = jQuery.prototype;
+
 jQuery.prototype = {
     constructor: jQuery,
-    init: function(selector, context, rootjQuery){
-       this.selector = selector;
-       this.context = context;
+    init: function (myName, myAge) {
+        this.myName = myName;
+        this.myAge = myAge;
+    },
+    consoleName: function(){
+        console.log(this.myName);
+    },
+    consoleAge: function(){
+        console.log(this.myAge);
     }
 };
-
+jQuery().consoleName();
+jQuery().consoleAge();
 /**jQuery中面向对象的写法是这样写的**/
 
 
