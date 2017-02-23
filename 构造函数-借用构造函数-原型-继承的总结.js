@@ -5,14 +5,81 @@
  * 这样，即通过在原型上定义方法实现了函数复用，又能够保证每个实例都有他自己的属性。--《javascript高级程序设计》]
  */
 
-//------js高级 "6.3.3 组合继承" 示例， P168--------
-function SuperType(name){
-    this.name = "wang";
+/*------js高级 "6.3.3 组合继承" 示例， P168--------*/
+function FatherFun(name){
+    this.name = name;
     this.colors = ["red", "blue", "green"];
 }
-SuperType.prototype.sayName= function(){
-    alert(this.name);
-};
-var superType = new SuperType();
 
-superType.sayName();
+//-------正常在原型上添加方法的写法-------
+FatherFun.prototype.sayName= function(){
+    console.log(this.name);  // Father function name
+};
+FatherFun.prototype.outputColors= function(){
+    console.log(this.colors);  // ["red", "blue", "green"]
+};
+//-------正常在原型上添加方法的写法-------
+
+var fatherFunIns = new FatherFun("Father function name"); //instance 实例
+fatherFunIns.sayName();
+fatherFunIns.outputColors();
+
+
+function SonFun(name, age){
+    //继承FatherFun构造函数的属性
+    FatherFun.call(this, name);
+    this.age = age;
+}
+//继承FatherFun构造函数原型上的方法
+SonFun.prototype = new FatherFun(); // 调用FatherFun构造函数,赋值给SonFun构造函数的原型(SonFun.prototype)
+SonFun.prototype.constructor = SonFun;  //SonFun构造函数的constructor属性还指向SonFun
+SonFun.prototype.sayAge = function(){
+    console.log(this.age);
+};
+var sonFunIns1 = new SonFun("Nicholas", 29); //创建SonFun构造函数的实例，
+sonFunIns1.colors.push("black");
+console.log(sonFunIns1.colors);  // ["red", "blue", "green", "black"]
+sonFunIns1.sayName();      // Nicholas
+sonFunIns1.sayAge();       // 29
+
+var sonFunIns2 = new SonFun("Greg", 27);
+console.log(sonFunIns2.colors);  //["red", "blue", "green"]
+sonFunIns2.sayName();    //Greg
+sonFunIns2.sayAge();    //27
+
+/*------js高级 "6.3.3 组合继承" 示例， P168--------*/
+
+
+/**prototype中面向对象的写法大致是这样写的**/
+function NativeTabSwitch(){
+    this.initialize.apply(this, arguments);
+}
+
+NativeTabSwitch.prototype = {
+  initialize: function(myName, myAge){
+      this.myName = myName;
+      this.myAge = myAge;
+  }
+};
+
+var myName = "My name is Nicholas";
+var myAge = "My age is 32 years old";
+var nativeTabSwiIns = new NativeTabSwitch(myName, myAge);
+/**prototype中面向对象的写法大致是这样写的**/
+
+
+/**jQuery中面向对象的写法是这样写的**/
+function jQuery(selector, context){
+    return new jQuery.prototype.init(selector, context, rootjQuery);
+}
+jQuery.prototype = {
+    constructor: jQuery,
+    init: function(selector, context, rootjQuery){
+       this.selector = selector;
+       this.context = context;
+    }
+};
+
+/**jQuery中面向对象的写法是这样写的**/
+
+
