@@ -52,7 +52,7 @@ console.log("---------------------------------------------------------");
 /*------js高级 "6.3.3 组合继承" 示例， P168--------*/
 
 
-/**prototype中面向对象的写法大致是这样写的**/
+/**prototype中面向对象的写法大致是这样写的: 这个写法实际上可以归类到“组合继承”**/
 function NativeTabSwitch() {
     this.initialize.apply(this, arguments);
 }
@@ -70,22 +70,20 @@ NativeTabSwitch.prototype = {
     }
 };
 
-var myName = "My name is Nicholas";
-var myAge = "My age is 32 years old";
+var myName = "My name is Nicholas.";
+var myAge = "My age is 32 years old.";
 var nativeTabSwiIns = new NativeTabSwitch(myName, myAge);
 nativeTabSwiIns.consoleName();
 nativeTabSwiIns.consoleAge();
-/**prototype中面向对象的写法大致是这样写的**/
+/** prototype中面向对象的写法大致是这样写的: 这个写法实际上可以归类到“组合继承” **/
 
 
 console.log("---------------------------------------------------------");
 
 /**jQuery中面向对象的写法是这样写的**/
-function jQuery(myName, myAge) {
+function jQuery() {
     return new jQuery.prototype.init(myName, myAge);
 }
-
-jQuery.prototype.init.prototype = jQuery.prototype;
 
 jQuery.prototype = {
     constructor: jQuery,
@@ -93,15 +91,20 @@ jQuery.prototype = {
         this.myName = myName;
         this.myAge = myAge;
     },
-    consoleName: function(){
-        console.log(this.myName);
+    consoleName: function(para1){ //参数parameter
+        console.log(this.myName + " " +para1);
     },
-    consoleAge: function(){
-        console.log(this.myAge);
+    consoleAge: function(para2){
+        console.log(this.myAge + " " + para2);
     }
 };
-jQuery().consoleName();
-jQuery().consoleAge();
+jQuery.prototype.init.prototype = jQuery.prototype;
+
+var para1 = "Do you konw?";
+var para2 = "People over thirty";
+
+jQuery(myName).consoleName(para1);
+jQuery(myAge).consoleAge(para2);
 /**jQuery中面向对象的写法是这样写的**/
 
 
