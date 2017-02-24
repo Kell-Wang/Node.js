@@ -52,7 +52,10 @@ console.log("---------------------------------------------------------");
 /*------js高级 "6.3.3 组合继承" 示例， P168--------*/
 
 
-/**prototype中面向对象的写法大致是这样写的**/
+/**prototype中面向对象的写法大致是这样写的 : 每个函数都包含两个非继承而来的方法: apply()和call(). 这两个方法的用途
+ * 都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接受两个参数：(1)一个是在其中
+ * 运行函数的作用域，(2)另一个是参数数组。其中第二个参数可以是Array的实例，也可以是arguments对象。
+ * **/
 function NativeTabSwitch() {
     this.initialize.apply(this, arguments);
 }
@@ -100,7 +103,7 @@ jQuery.prototype = {
 };
 
 jQuery.prototype.init.prototype = jQuery.prototype;
-var para1 = "Do you knonw?";
+var para1 = "Do you know?";
 var para2 = "People over thirty years old";
 
 jQuery(myName).consoleName(para1);
