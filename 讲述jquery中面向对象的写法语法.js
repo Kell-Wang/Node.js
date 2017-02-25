@@ -5,25 +5,9 @@
  * 因为参数要传入到jQuery.prototype.init()构造函数中，所以在这个构造函数的原型上，
  * init方法中必须要首先把所有的参数赋值给自定义的属性，这样在其他的方法中，才可以调用
  * 原型上定义的属性，因为**原型对象共享所有的属性**
-**/
+ **/
 
 
-/*fddsffgsdfgafgdafgfgdfsdfasdfsafasd
-fasdfasdfadsf
-ad、
-asd'f/asdf'sd/fsdf
-
-
-
-sdfasdf/asdfs/dfasdf/asdfasdf*/
-
-
-
-
-
-
-
-/*
 (function(){
     console.log(typeof arguments);  //Object
 })();
@@ -31,11 +15,11 @@ sdfasdf/asdfs/dfasdf/asdfasdf*/
 
 
 console.log("----------------------------");
-/!*
-var f = function g(){
-    return 23;
-};
-console.log(typeof g());*!/
+/*
+ var f = function g(){
+ return 23;
+ };
+ console.log(typeof g());*/
 
 
 console.log("----------------------------");
@@ -57,4 +41,4 @@ console.log(x);  //undefined
 console.log("----------------------------");
 (function f(f){
     console.log(typeof f());  //number
-})(function(){return 1;});*/
+})(function(){return 1;});
