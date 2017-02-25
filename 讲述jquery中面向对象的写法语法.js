@@ -8,6 +8,22 @@
 **/
 
 
+/*fddsffgsdfgafgdafgfgdfsdfasdfsafasd
+fasdfasdfadsf
+ad、
+asd'f/asdf'sd/fsdf
+
+
+
+sdfasdf/asdfs/dfasdf/asdfasdf*/
+
+
+
+
+
+
+
+/*
 (function(){
     console.log(typeof arguments);  //Object
 })();
@@ -15,11 +31,11 @@
 
 
 console.log("----------------------------");
-/*
+/!*
 var f = function g(){
     return 23;
 };
-console.log(typeof g());*/
+console.log(typeof g());*!/
 
 
 console.log("----------------------------");
@@ -41,4 +57,4 @@ console.log(x);  //undefined
 console.log("----------------------------");
 (function f(f){
     console.log(typeof f());  //number
-})(function(){return 1;});
+})(function(){return 1;});*/
