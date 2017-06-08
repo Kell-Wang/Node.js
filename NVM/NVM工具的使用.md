@@ -5,8 +5,8 @@
 
 
 ## NVM工具的使用
-+ Node Version Manager(Node版本管理工具): 由于以后的开发可能要在多个Node版本中测试，Node版本较多，所以需要这款工具管理
++ Node Version Manager(Node版本管理工具): 由于以后的开发可能要在多个Node版本中测试，Node版本较多，所以需要这款工具管理 (用Go语言写成)
 
 ### 安装操作步骤
-
-- 0.下载: nvm-windows [https://github.com/coreybutler/nvm-windows/releases] () 
+*Node.js有很多种安装方式，下面用一种nvm的方式，来安装node.js，nvm是node.js版本管理工具的意思。*
+- 0.下载: nvm-windows [https://github.com/coreybutler/nvm-windows/releases]，选择第一个: nvm-noinstall.zip下载完成之后解压到一个地方: 如: C:\dev\nvm 里面的文件列表: elevate.cmd， elevate.vbs, install.cmd, LICENSE, nvm.exe
