@@ -71,7 +71,7 @@
 #### 3.4 事件处理机制及事件环机制 <br/>
 ###### 3.4.1 EventEmitter类: 在Node.js的用于实现各种事件处理的event模块中，定义了一个EventEmitter类。 <br/>
      所有可能触发事件的对象都是一个继承了EventEmitter类的子类的实例对象。 <br/>
-    EventEmitter类的各种方法:(event代表事件名，listener代表事件处理函数，中括号内的为可选参数)  <br/>
+     EventEmitter类的各种方法:(event代表事件名，listener代表事件处理函数，中括号内的为可选参数)  <br/>
      addListener(event, listener) : 对指定事件绑定事件处理函数(一般都用下面的on方法)  <br/>
      on(event,listener) : 对指定事件绑定事件处理函数  <br/>  
      once(event,listener) : 对指定事件绑定只执行一次的事件处理函数  <br/>
