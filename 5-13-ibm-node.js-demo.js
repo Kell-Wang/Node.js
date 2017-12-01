@@ -12,7 +12,7 @@ var url = require("url");
   particular(/pə'tɪkjʊlə/ adj 特定的) callback function should be executed. Since we're creating
   a web service with REST API, we want an HTTP Server, which requires the http variable we created
   in th lines above.  Finally, you can see that the callback method receives a "request and "response"
-  object automatically. This should be familiar to any PHP or Java programmer    */
+  object automatically /ˌɔ:tə'mætikəli/ 自动地. This should be familiar to any PHP or Java programmer    */
 http.createServer(function(request, response){
     response.writeHead(200, {"Content-type": "text/plain"}); //写入头部
     var params = url.parse(request.url, true).query;  //parameter参数
