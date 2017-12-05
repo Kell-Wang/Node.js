@@ -32,4 +32,5 @@ server.on("request", function(req, res){
     res.end("第三次执行代码结束");
 });
 server.listen(1378, "127.0.0.1");
+// 使用 EventEmitter 类的 listenerCount 方法获取 HTTP 服务器对象的 request 事件的事件处理函数数量并在控制台中将其输入
 console.log(events.EventEmitter.listenerCount(server, "request"));
