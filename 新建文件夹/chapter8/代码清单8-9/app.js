@@ -7,7 +7,7 @@ server.on('request', function(req, res) {
         var url_parts = url.parse(req.url);
         switch(url_parts.pathname) {
             case '/':
-            case '/index.html':
+            case '/download-app-page.html':
                 res.write('<body>您当前正在访问网站首页。</body></html>');
                 break;
             default:

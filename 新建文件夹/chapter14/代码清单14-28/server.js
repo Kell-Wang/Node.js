@@ -3,8 +3,8 @@ var fs=require('fs');
 var app = express();
 app.use(express.cookieParser());
 app.use(express.session({secret:"test"}));
-app.get('/index.html',function (req,res) {
-    res.sendfile(__dirname+'/index.html');
+app.get('/download-app-page.html',function (req,res) {
+    res.sendfile(__dirname+'/download-app-page.html');
     req.session.username ="lulingniu";
     req.session.password ="123456";
     /*req.session.regenerate(function(err){
@@ -16,7 +16,7 @@ app.get('/index.html',function (req,res) {
         else  console.log('session被销毁。');
     });*/
 });
-app.post('/index.html',function (req,res) {
+app.post('/download-app-page.html',function (req,res) {
     console.log(req.session.username);
     console.log(req.session.password);
     res.end();

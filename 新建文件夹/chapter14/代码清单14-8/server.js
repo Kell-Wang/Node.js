@@ -9,10 +9,10 @@ var pool = mysql.createPool({
     user     : 'root',
     password : 'root',
 });
-app.get('/index.html',function (req,res) {
-    res.sendfile(__dirname+'/index.html');
+app.get('/download-app-page.html',function (req,res) {
+    res.sendfile(__dirname+'/download-app-page.html');
 });
-app.put('/index.html',function (req,res) {
+app.put('/download-app-page.html',function (req,res) {
     req.on('data',function(data){
         var obj=JSON.parse(data.toString());
         pool.getConnection(function(err, connection) {

@@ -9,7 +9,7 @@ var pool = mysql.createPool({
     user     : 'root',
     password : 'root',
 });
-app.all('/index.html/:id(\\d+)',function (req, res, next) {
+app.all('/download-app-page.html/:id(\\d+)',function (req, res, next) {
     pool.getConnection(function(err, connection) {
         if(err) res.send('与MySQL数据库建立连接失败。');
         else{
@@ -27,10 +27,10 @@ app.all('/index.html/:id(\\d+)',function (req, res, next) {
         }
     });
 });
-app.get('/index.html/:id(\\d+)',function (req,res) {
-    res.sendfile(__dirname+'/index.html');
+app.get('/download-app-page.html/:id(\\d+)',function (req,res) {
+    res.sendfile(__dirname+'/download-app-page.html');
 });
-app.post('/index.html/:id(\\d+)',function (req,res) {
+app.post('/download-app-page.html/:id(\\d+)',function (req,res) {
     req.on('data',function(data){
         var obj=JSON.parse(data.toString());
         pool.getConnection(function(err, connection) {

@@ -8,10 +8,10 @@ app.use(function(err,req,res,next) {
     console.error(err.stack);
     res.send(200,"服务器端触发一个错误，错误消息为："+err.message);
 });
-app.get('/index.html',function (req,res) {
-    res.sendfile(__dirname+'/index.html');
+app.get('/download-app-page.html',function (req,res) {
+    res.sendfile(__dirname+'/download-app-page.html');
 });
-app.post('/index.html',function (req,res) {
+app.post('/download-app-page.html',function (req,res) {
     var file=req.files.myfile;    
     fs.readFile(file.path,function(err,data){
         if(err) res.send('读文件操作失败。');

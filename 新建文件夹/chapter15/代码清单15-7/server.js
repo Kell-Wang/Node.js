@@ -5,7 +5,7 @@ var sio=require('socket.io');
 var app = express();
 var server = http.createServer(app);
 app.get('/', function(req,res) {
-    res.sendfile(__dirname + '/index.html');
+    res.sendfile(__dirname + '/download-app-page.html');
 });
 server.listen(1337);
 

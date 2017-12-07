@@ -3,7 +3,7 @@ var sio = require('socket.io');
 var fs=require('fs');
 var server = http.createServer(function(req, res) {
     res.writeHead(200, { 'Content-type': 'text/html'});
-    res.end(fs.readFileSync('./index.html'));
+    res.end(fs.readFileSync('./download-app-page.html'));
 });
 server.listen(1337);
 var socket = sio.listen(server);

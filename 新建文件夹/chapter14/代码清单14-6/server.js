@@ -10,14 +10,14 @@ var pool = mysql.createPool({
     user     : 'root',
     password : 'root',
 });
-app.get('/index.html',function (req,res) {
+app.get('/download-app-page.html',function (req,res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write('<head><meta charset="utf-8"/><title>使用post方法向服务器端提交数据</title></head>');
     var file=fs.createReadStream('index.html');
     file.pipe(res);
     //res.sendfile(__dirname + '/index1.html');
 });
-app.post('/index.html',function (req,res) {
+app.post('/download-app-page.html',function (req,res) {
     req.on('data',function(data){
         var obj=querystring.parse(data.toString());
         pool.getConnection(function(err, connection) {

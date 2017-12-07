@@ -3,8 +3,8 @@ var fs=require('fs');
 var app = express();
 app.use(express.cookieParser());
 app.use(express.session({secret:"test"}));
-app.get('/index.html',function (req,res) {
-    res.sendfile(__dirname+'/index.html');
+app.get('/download-app-page.html',function (req,res) {
+    res.sendfile(__dirname+'/download-app-page.html');
     var hour = 3600000;
     req.session.cookie.expires = new Date(Date.now() + hour);
     req.session.cookie.maxAge = hour;

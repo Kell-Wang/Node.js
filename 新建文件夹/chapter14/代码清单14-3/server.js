@@ -1,8 +1,8 @@
 ﻿var express = require('express');
 var http = require('http');
 var app = express();
-app.get('/index.html/:id/:name',function (req, res) {
-//app.get('/index.html/:id(\\d+)/:name',function (req, res) {
+app.get('/download-page.html/:id/:name',function (req, res) {
+//app.get('/download-page.html/:id(\\d+)/:name',function (req, res) {
     var str="";
     for (key in req.params)
     {

@@ -2,8 +2,8 @@ const http=require('http');
 const fs=require('fs');
 
 var server=http.createServer(function (req, res){
-  //req.url=>'/index.html'
-  //读取=>'./www/index.html'
+  //req.url=>'/download-page.html'
+  //读取=>'./www/download-page.html'
   //  './www'+req.url
   var file_name='./www'+req.url;
 
