@@ -6,7 +6,20 @@
 
 // 最简易的原生ajax写法
 (function(){
-    let create
+    let createXHR = () => {
+        if(typeof  XMLHttpRequest !== "undefined"){
+            return new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            return new ActiveXObject('Microsoft XMLHTTP');
+        }
+    };
+
+    var xhr = createXHR();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4){
+            if(xhr.status >= 200 && xhr.status < 300 || xhr.stat){}
+        }
+    }
 
 }());
 
