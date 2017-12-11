@@ -4,7 +4,7 @@ var fs = require('fs');
 server.on('connection', function(socket) {
     console.log('客户端与服务器端连接已建立。');
     socket.setEncoding('utf8');
-    //var readStream = fs.createReadStream('./server.js');  发送小尺寸文件
+    //var readStream = fs.createReadStream('./fs-server.js');  发送小尺寸文件
     var readStream = fs.createReadStream('./天地.mp3');	    //发送大尺寸文件
     readStream.on('data', function(data) {
         var flag=socket.write(data);
