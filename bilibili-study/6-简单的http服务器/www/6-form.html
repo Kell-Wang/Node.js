@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟登陆和注册</title>
+    <link rel="stylesheet" href="../../reset.css">
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="../../bootstrap.css">
+    <style type="text/css">
+        .container-wall {
+            width:100%; height:100vh;
+            background:url("")
+
+           /* background:white;
+            background-image: linear-gradient(90deg, rgba(231,0,0,.2) 50%, transparent 0),
+                              linear-gradient(0deg,  transparent 50%, rgba(200,0,0,.2) 0) ;
+            background-size:30px 30px;*/
+        }
+
+        .container {
+            /*filter: blur(6px);*/
+        }
+
+        .btn {
+            background: tan;
+            border-radius: 8px;
+            padding: 1em;
+            box-shadow: 0 0 0 .6em #655;
+        }
+    </style>
+
+    <script src="../../jquery-v3.1.0.js"></script>
+    <script>
+        const Tools = {
+            arrIndexOf(arr, item){
+                let i =0,
+                    len = arr.length;
+                for(; i < len; i++) {
+                    if(arr[i] === item){
+                        return i;
+                    }
+                }
+                return -1;
+            },
+
+            hasClass(ele, clas){
+                // split(): 基于指定的分隔符将一个字符串分割成多个子字符串，并将结果放在一个数组中
+                // \s     : 匹配一个空白字符
+                let nameArr = ele.className.split("/\s+/");
+                if(this.arrIndexOf(nameArr, clas) >= 0){
+                    return true;
+                } else {
+                    return false;
+                }
+            },
+
+            addClass(ele, clas){
+                if(this.hasClass(ele, clas)){
+                    return null;
+                }
+                ele.className = (ele.className || "") + " " + clas;
+            },
+
+            removeClass(ele, clas){
+                let nameArr = ele.className.split(/\s+/);
+                let i = 0,
+                    len = nameArr.length,
+                    arr = [];
+                for(; i < len; i++){
+                    if(nameArr[i] !== clas){
+                        arr.push(nameArr[i]);
+                    }
+                }
+                // join(): 数组方法，只接受一个参数，即用作分隔符的字符串，返回包含所有数组项的字符串
+                ele.className = arr.join(" ");
+            }
+        }
+    </script>
+</head>
+<body>
+   <div class="container-wall">
+
+       <div class="container">
+           <div class="row">
+               <div class="col-md-1">.col-md-1</div>
+               <div class="col-md-1">.col-md-1</div>
+               <div class="col-md-1">.col-md-1</div>
+               <div class="col-md-1">.col-md-1</div>
+               <div class="col-md-1">.col-md-1</div>
+               <div class="col-md-1">.col-md-1</div>
+               <div class="col-md-1">.col-md-1</div>
+               <div class="col-md-1">.col-md-1</div>
+               <div class="col-md-1">.col-md-1</div>
+               <div class="col-md-1">.col-md-1</div>
+               <div class="col-md-1">.col-md-1</div>
+               <div class="col-md-1">.col-md-1</div>
+           </div>
+       </div>
+
+   </div>
+</body>
+</html>

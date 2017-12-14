@@ -5,7 +5,7 @@
  */
 
 // 最简易的原生ajax写法
-(function(){
+/*(function(){
     let createXHR = () => {
         if(typeof  XMLHttpRequest !== "undefined"){
             return new XMLHttpRequest();
@@ -14,14 +14,26 @@
         }
     };
 
-    var xhr = createXHR();
+    let xhr = createXHR();
     xhr.onreadystatechange = function(){
         if(xhr.readyState === 4){
-            if(xhr.status >= 200 && xhr.status < 300 || xhr.stat){}
+            if(xhr.status >= 200 && xhr.status < 300 || xhr.status === 304){
+                console.log(xhr.responseText);  // 只有当xhr.send()执行之后，才会触发
+            } else {
+                console.log("Request was unsuccessful: " + xhr.status );
+            }
         }
-    }
+    };
 
-}());
+    xhr.open("get/post", "url", true);          // true代表异步传输
+    xhr.setRequestHeader("Content-type", "application/x-www.form-urlencoded");
+    const btn = getClassName("defaultNext")[0];
+    const myForm = getClassName("myForm")[0];
+    myForm.addEventListener("click", function(){
+        xhr.send(seriallize(myForm));
+    }, false);
+
+}());*/
 
 
 
