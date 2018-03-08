@@ -1,6 +1,8 @@
 const http  = require("http");
 const fs    = require("fs");
 
+
+
 http.createServer(
     (request, respond) => {
         var file_name = "./www" + request.url;

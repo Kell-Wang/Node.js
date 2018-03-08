@@ -1,12 +1,14 @@
 
 Node.js V8.9.3 Documentation
 
-Stability   /stə'bɪlɪtɪ/    n.   稳定性， 稳固
-stable      /'steɪb(ə)l/    adj. 稳定的，坚定地，牢固的
-deprecate   /'deprɪkeɪt/    vt.  不赞成，反对
+- Stability   /stə'bɪlɪtɪ/    n.   稳定性， 稳固
+- stable      /'steɪb(ə)l/    adj. 稳定的，坚定地，牢固的
+- deprecate   /'deprɪkeɪt/    vt.  不赞成，反对
 
-assertion   /ə'sɜːʃ(ə)n/    [计].断言      n.主张，维护，坚持
-cluster     /'klʌstə/       [计].串，集群
+- assertion   /ə'sɜːʃ(ə)n/    [计].断言      n.主张，维护，坚持
+- cluster     /'klʌstə/       [计].串，集群
+
+
 
  模块名 | 模块功能 | Stability
 ------|------|------

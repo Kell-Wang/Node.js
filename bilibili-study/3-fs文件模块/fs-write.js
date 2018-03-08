@@ -4,3 +4,4 @@ const fs = require("fs");
 fs.writeFile("fs-write-content.txt", "Hope to write content", (err) => {
     console.log(err);
 });
+
