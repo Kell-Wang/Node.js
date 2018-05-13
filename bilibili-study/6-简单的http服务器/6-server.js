@@ -41,7 +41,7 @@ let server = http.createServer((req, res) => {
                     // 1.检查用户是否存在
                     if(users[GET.user] === null) {
                         res.write('{"ok":false, "msg": "此用户不存在"}');
-                    } else if(users[GET.user] != GET.pass) {
+                    } else if(users[GET.user] !== GET.pass) {
                         // 2.检查用户密码
                         res.write('{"ok":false, "msg": "用户名或密码有误"}');
                     } else {
