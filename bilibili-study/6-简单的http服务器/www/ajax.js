@@ -87,3 +87,17 @@ let ajax = (json) => {
     }
 
 };
+
+
+
+// 2018-0513 调用示例
+/*
+*  ajax({
+*      url: "xxx ，
+*      data: {key: value},
+*      type: "get/post",
+*      success: ,
+*      error:
+*  })
+*
+* */
