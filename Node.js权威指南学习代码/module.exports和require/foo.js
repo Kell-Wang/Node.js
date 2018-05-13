@@ -4,7 +4,7 @@ module.exports = {a: 2};
 
 
 
-// Vue 中的写法
+// Vue 中的写法 次写法已经是 ES6的语法了，Node 导出: exports 和 module.exports. ES6 导出: export
 // export default {
 //     name: "App",
 //     data: function () {
