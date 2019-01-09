@@ -18,6 +18,6 @@ let server = http.createServer(
     }
 ).listen(8080);
 
-// http://localhost:8080/1.html
+//浏览器中输入: localhost:8080/1.html
 
 
