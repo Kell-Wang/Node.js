@@ -1,4 +1,4 @@
-﻿var readline = require('readline');
+var readline = require('readline');
 var fs=require('fs');
 var file = fs.createReadStream('./message.txt');
 var rl = readline.createInterface({

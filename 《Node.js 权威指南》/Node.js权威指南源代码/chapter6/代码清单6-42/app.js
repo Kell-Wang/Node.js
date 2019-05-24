@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 var readStream = fs.createReadStream('./天地.mp3');
 var out = fs.createWriteStream('./天地2.mp3');
 readStream.on('data', function(data) {

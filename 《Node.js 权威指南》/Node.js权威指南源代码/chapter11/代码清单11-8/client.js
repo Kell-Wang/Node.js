@@ -1,4 +1,4 @@
-﻿var zlib = require('zlib');
+var zlib = require('zlib');
 var http = require('http');
 var fs = require('fs');
 var request = http.get({ host: 'localhost',

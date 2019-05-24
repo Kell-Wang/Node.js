@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 try{
     var data=fs.readFileSync('./test.txt','utf8');
     //在控制台中输出文件内容

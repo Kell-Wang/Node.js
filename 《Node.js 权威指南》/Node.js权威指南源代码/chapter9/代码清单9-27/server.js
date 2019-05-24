@@ -1,4 +1,4 @@
-﻿var child = require('child_process').fork('child.js');
+var child = require('child_process').fork('child.js');
 var server = require('net').createServer();
 server.on('connection', function(socket) {
     if (socket.remoteAddress !== '192.168.1.100') {

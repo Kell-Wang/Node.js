@@ -1,4 +1,4 @@
-﻿var net = require('net');
+var net = require('net');
 var server = net.createServer();
 server.on('connection', function(socket) {
     address = socket.address();

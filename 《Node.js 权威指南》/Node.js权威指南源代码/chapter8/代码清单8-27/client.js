@@ -1,4 +1,4 @@
-﻿var https = require('https');
+var https = require('https');
 var options = {
     hostname: 'npmjs.org',
     port: 443,

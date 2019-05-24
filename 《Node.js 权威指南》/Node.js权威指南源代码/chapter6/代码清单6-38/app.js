@@ -1,4 +1,4 @@
-﻿var fs = require('fs');
+var fs = require('fs');
 var readStream = fs.createReadStream('./message.txt');
 readStream.pause();
 readStream.on('data', function(data) {

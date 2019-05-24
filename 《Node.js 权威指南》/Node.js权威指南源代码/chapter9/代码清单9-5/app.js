@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 var finish=function() {
     console.log('文件读取完毕。');
 }

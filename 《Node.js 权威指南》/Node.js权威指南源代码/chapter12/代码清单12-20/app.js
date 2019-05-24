@@ -1,4 +1,4 @@
-﻿var vm = require('vm');
+var vm = require('vm');
 var e=0;
 vm.runInThisContext("e=e+1");
 /*eval("e=e+1");

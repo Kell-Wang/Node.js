@@ -1,4 +1,4 @@
-﻿var http = require('http');
+var http = require('http');
 http.createServer(function (req, res) {
     if(req.url!=="/favicon.ico"){
         noneexist();

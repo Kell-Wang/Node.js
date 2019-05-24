@@ -1,4 +1,4 @@
-﻿var http = require('http');
+var http = require('http');
 var options = {
     hostname: 'localhost',
     port: 1337,

@@ -1,4 +1,4 @@
-﻿var cp=require('child_process');
+var cp=require('child_process');
 var sp1 =cp.fork('./test/test1.js',['one','two','three','four'],{silent:true});
 var sp2 =cp.fork('test2.js');
 sp1.stdout.on('data',function (data) {

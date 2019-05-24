@@ -1,4 +1,4 @@
-﻿var http = require('http');
+var http = require('http');
 process.on('message', function (msg,server) {
     if (msg === 'server') {
         console.log('子进程中的服务器已创建。');

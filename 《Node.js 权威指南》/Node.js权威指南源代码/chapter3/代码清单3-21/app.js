@@ -1,4 +1,4 @@
-﻿var http = require('http');//引用http模块
+var http = require('http');//引用http模块
 var server = http.createServer();//创建http服务器并将该服务器赋值给变量server
 server.on('removeListener',function(e,f){
     console.log("对"+e+"事件取消事件处理函数");

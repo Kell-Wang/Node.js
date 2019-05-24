@@ -1,4 +1,4 @@
-﻿var path=require('path');
+var path=require('path');
 //指定相对目录路径
 console.log("path.dirname('./foo/bar/baz/asdf/quux')=");
 console.log(path.dirname('./foo/bar/baz/asdf/quux'));

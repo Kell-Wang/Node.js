@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 var time = process.hrtime();
 var data=fs.readFileSync('./app.js');
 var diff = process.hrtime(time);

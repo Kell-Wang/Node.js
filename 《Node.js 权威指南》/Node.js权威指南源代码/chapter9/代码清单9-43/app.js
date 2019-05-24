@@ -1,4 +1,4 @@
-﻿var cluster = require('cluster');
+var cluster = require('cluster');
 var http = require('http');
 if (cluster.isMaster) {
     cluster.setupMaster({

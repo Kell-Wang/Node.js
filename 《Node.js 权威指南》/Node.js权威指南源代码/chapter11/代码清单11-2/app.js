@@ -1,4 +1,4 @@
-﻿var crypto = require('crypto');
+var crypto = require('crypto');
 var fs = require('fs');
 var pem = fs.readFileSync('key.pem');
 var key = pem.toString('ascii');

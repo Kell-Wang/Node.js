@@ -1,4 +1,4 @@
-﻿var dgram = require('dgram');
+var dgram = require('dgram');
 var client = dgram.createSocket("udp4");
 client.bind(41235,'192.168.1.102');
 var buf = new Buffer("你好。");

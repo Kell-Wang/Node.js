@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 fs.symlink('./a','./b','dir',function(err){
     if(err) console.log('为目录创建符号链接操作失败。');
     else{

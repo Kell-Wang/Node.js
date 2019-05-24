@@ -1,4 +1,4 @@
-﻿var crypto = require('crypto');
+var crypto = require('crypto');
 var fs = require('fs');
 var shasum = crypto.createHash('sha1');
 var s = fs.ReadStream('./app.js');

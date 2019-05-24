@@ -1,4 +1,4 @@
-﻿var https = require('https');
+var https = require('https');
 var fs= require('fs');
 var pk = fs.readFileSync('./privatekey.pem');
 var pc = fs.readFileSync('./certificate.pem');

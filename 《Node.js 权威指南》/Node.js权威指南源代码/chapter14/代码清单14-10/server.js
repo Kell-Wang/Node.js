@@ -1,4 +1,4 @@
-﻿var express = require('express');
+var express = require('express');
 var fs=require('fs');
 var app = express();
 var mysql = require('mysql');

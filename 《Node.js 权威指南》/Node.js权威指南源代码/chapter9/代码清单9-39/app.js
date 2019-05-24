@@ -1,4 +1,4 @@
-﻿var cluster = require('cluster');
+var cluster = require('cluster');
 cluster.setupMaster({
     exec : "child.js"
 });

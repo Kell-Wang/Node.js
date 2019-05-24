@@ -1,4 +1,4 @@
-﻿var http = require('http');
+var http = require('http');
 var server=http.createServer(function (req, res) {
     if(req.url!=="/favicon.ico"){
         if(res.headersSent) console.log('响应头已发送');

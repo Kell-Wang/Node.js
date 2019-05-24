@@ -1,4 +1,4 @@
-﻿var net = require('net');
+var net = require('net');
 var server = net.createServer(function(socket) {
     console.log('客户端与服务器端连接已建立。');
 });

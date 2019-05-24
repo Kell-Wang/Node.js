@@ -1,4 +1,4 @@
-﻿var net = require('net');
+var net = require('net');
 var file = require('fs').createWriteStream('./message.txt');
 var server = net.createServer();
 server.on('connection', function(socket) {  

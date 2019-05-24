@@ -1,2 +1,2 @@
-﻿var testModule=require('./testModule.js');
+var testModule=require('./testModule.js');
 //require('./testModule.js');

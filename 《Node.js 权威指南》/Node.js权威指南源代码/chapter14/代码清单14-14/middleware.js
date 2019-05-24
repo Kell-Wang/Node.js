@@ -1,4 +1,4 @@
-﻿var setHeader = function() {
+var setHeader = function() {
     return function(req, res, next) {
         res.statusCode=200;
         res.header={'Content-Type': 'text/html'};

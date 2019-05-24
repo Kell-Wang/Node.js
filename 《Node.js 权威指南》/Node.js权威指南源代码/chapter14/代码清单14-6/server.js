@@ -1,4 +1,4 @@
-﻿var express = require('express');
+var express = require('express');
 var fs = require('fs');
 var querystring=require('querystring');
 var app = express();

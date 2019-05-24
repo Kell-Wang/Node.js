@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 var file = fs.createReadStream('./message.txt');
 var out = fs.createWriteStream('./anotherMessage.txt');
 file.on('data', function(data) {

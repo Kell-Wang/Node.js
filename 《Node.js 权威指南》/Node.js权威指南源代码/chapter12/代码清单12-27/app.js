@@ -1,4 +1,4 @@
-﻿var net = require("net"),
+var net = require("net"),
 repl = require("repl");
 net.createServer(function (socket) {
     repl.start({

@@ -1,4 +1,4 @@
-﻿var domain=require('domain');
+var domain=require('domain');
 var fs=require('fs');
 var d = domain.create();
 d.name='d1';

@@ -1,4 +1,4 @@
-﻿var mongoose = require('mongoose'),
+var mongoose = require('mongoose'),
 Schema = mongoose.Schema;
 mongoose.connect('mongodb://localhost:27017/node-mongo-examples', function(err){
     if (err) {

@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 var out = fs.createWriteStream('./message.txt');
 out.on('error',function(err){
     console.log('写文件操作发生错误。');

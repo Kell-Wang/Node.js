@@ -1,4 +1,4 @@
-﻿var dgram = require("dgram");
+var dgram = require("dgram");
 var server = dgram.createSocket("udp4");
 server.on("message", function (msg,rinfo) {
     var buf=new Buffer("确认信息："+msg);

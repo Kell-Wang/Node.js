@@ -1,4 +1,4 @@
-﻿var net = require('net');
+var net = require('net');
 var server = net.createServer();
 //var server = net.createServer({allowHalfOpen:true});
 server.on('connection', function(socket) {

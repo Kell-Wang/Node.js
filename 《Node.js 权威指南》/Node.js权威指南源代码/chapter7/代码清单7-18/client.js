@@ -1,4 +1,4 @@
-﻿var net = require('net');
+var net = require('net');
 var client = new net.Socket();
 client.setEncoding('utf8');
 client.connect(8431,'localhost',function(){

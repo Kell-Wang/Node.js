@@ -1,4 +1,4 @@
-﻿var foo=require('foo');
+var foo=require('foo');
 var myFoo = new foo("Tom",40);//新建模块对象
 console.log("获取修改前的私有变量值");
 console.log(myFoo.GetName());//获取模块对象内的_name私有变量值

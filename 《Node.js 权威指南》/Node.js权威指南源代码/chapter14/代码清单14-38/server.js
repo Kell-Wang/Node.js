@@ -1,4 +1,4 @@
-﻿var express = require('express');
+var express = require('express');
 var app = express();
 app.use(app.router);
 var errmessage;

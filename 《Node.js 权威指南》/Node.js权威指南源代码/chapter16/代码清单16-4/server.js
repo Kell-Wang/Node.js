@@ -1,4 +1,4 @@
-﻿var express = require('express');
+var express = require('express');
 domain=require('domain');
 db = require('db');
 var order_search = require('order_search');

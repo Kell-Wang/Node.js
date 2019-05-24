@@ -1,4 +1,4 @@
-﻿var vm = require('vm');
+var vm = require('vm');
 var script = vm.createScript('globalVar+=1;');
 obj = {
     globalVar:0

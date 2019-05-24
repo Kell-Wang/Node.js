@@ -1,4 +1,4 @@
-﻿var cp=require('child_process');
+var cp=require('child_process');
 var sp1 =cp.execFile('test1.bat',['one','two','three','four'],{cwd:'./test'},function(err,stdout,stderr){
     if(err){
         console.log('子进程开启失败: '+err);

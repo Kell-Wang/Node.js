@@ -1,4 +1,4 @@
-﻿var net = require('net');
+var net = require('net');
 var http = require('http');
 var child_process = require('child_process');
 var fs = require('fs');

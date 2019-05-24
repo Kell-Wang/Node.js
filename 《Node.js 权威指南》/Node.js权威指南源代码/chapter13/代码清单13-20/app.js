@@ -1,4 +1,4 @@
-﻿var mysql = require('mysql');
+var mysql = require('mysql');
 var tableName="users";
 var connection = mysql.createConnection({
     host     : 'localhost',

@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 fs.open('./message.txt','r',function(err,fd) {
     var buf=new Buffer(255);
     //一个汉字的utf编码为三个字节数据

@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 function foo() {
     function beginAnotherTask(){
         var file = fs.createReadStream('./crash.mp3');

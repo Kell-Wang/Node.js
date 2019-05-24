@@ -1,4 +1,4 @@
-﻿var dgram = require('dgram');
+var dgram = require('dgram');
 var server = dgram.createSocket('udp4');
 server.on('listening', function () {
     server.setMulticastTTL(128); 

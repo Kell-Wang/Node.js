@@ -1,4 +1,4 @@
-﻿var net = require('net');
+var net = require('net');
 var server = net.createServer(function(socket) {
     server.getConnections(function(err,count){
         console.log('当前存在%d个客户端连接。',count);

@@ -1,4 +1,4 @@
-﻿var crypto = require('crypto');
+var crypto = require('crypto');
 var fs = require('fs');
 var privatePem = fs.readFileSync('key.pem');
 var publicPem = fs.readFileSync('cert.pem');

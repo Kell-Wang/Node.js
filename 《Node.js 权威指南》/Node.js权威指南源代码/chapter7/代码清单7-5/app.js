@@ -1,4 +1,4 @@
-﻿var net = require('net');
+var net = require('net');
 var server = net.createServer(function(socket) {
     server.close(function(){
         console.log('TCP服务器被关闭。');

@@ -1,4 +1,4 @@
-﻿var zlib=require('zlib');
+var zlib=require('zlib');
 var gunzip = zlib.createGunzip();
 var fs = require('fs');
 var inp = fs.createReadStream('test.txt.gz');

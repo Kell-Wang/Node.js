@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 fs.watchFile('./message.txt',function(curr, prev) {
 //fs.watchFile('./message.txt',{persistent:false,interval:60*60*1000},function(curr, prev) {
     if(Date.parse(prev.ctime)==0)

@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 var domain = require('domain');
 var d = domain.create();
 fs.readFile('./test.txt',d.intercept(function(err, data) {

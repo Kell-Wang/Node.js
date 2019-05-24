@@ -1,4 +1,4 @@
-﻿function foo() {
+function foo() {
     console.log('foo');
 }
 process.nextTick(foo);

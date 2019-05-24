@@ -1,4 +1,4 @@
-﻿var http = require('http');//引用http模块
+var http = require('http');//引用http模块
 var events = require('events');//引用events模块
 var server = http.createServer();//创建http服务器并将该服务器赋值给变量server
 

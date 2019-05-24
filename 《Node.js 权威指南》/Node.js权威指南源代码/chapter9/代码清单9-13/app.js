@@ -1,4 +1,4 @@
-﻿var cp=require('child_process');
+var cp=require('child_process');
 var sp1 =cp.spawn('node',['test1.js','one','two','three','four'],{cwd:'./test'});
 //var sp1 =cp.spawn('node',['test1.js','one','two','three','four'],{cwd:'./test2'});
 var sp2 =cp.spawn('node',['test2.js'],{stdio:'pipe'});

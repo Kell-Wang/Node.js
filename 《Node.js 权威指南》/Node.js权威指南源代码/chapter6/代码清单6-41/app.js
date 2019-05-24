@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 var out = fs.createWriteStream('./test1.txt');
 for(var i=1;i<=10000;i++){
     var flag=out.write(i.toString());

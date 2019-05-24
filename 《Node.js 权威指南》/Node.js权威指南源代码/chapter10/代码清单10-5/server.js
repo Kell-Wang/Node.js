@@ -1,4 +1,4 @@
-﻿var http = require('http');
+var http = require('http');
 var domain = require('domain');
 http.createServer(function(req, res) {
     var reqd = domain.create();

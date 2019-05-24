@@ -1,4 +1,4 @@
-﻿var vm = require('vm');
+var vm = require('vm');
 var obj = {x: 2};
 var context1 = vm.createContext(obj);
 vm.runInNewContext("x=x+2", context1);

@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 var buf=new Buffer('我喜爱编程');
 fs.open('./anotherMessage.txt','wx',function(err,fd) {
     fs.write(fd,buf,0,15,0,function(err,written,buffer) {

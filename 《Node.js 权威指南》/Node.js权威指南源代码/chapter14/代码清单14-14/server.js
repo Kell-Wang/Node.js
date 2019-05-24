@@ -1,4 +1,4 @@
-﻿var express = require('express');
+var express = require('express');
 var middleware = require('./middleware');
 var app = express();
 app.use('/static',middleware.setHeader());

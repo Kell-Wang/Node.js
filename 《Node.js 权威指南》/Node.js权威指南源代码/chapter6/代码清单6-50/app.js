@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 var path=require('path');
 var myPath=path.resolve('a','b','c/message.txt');
 console.log(myPath);

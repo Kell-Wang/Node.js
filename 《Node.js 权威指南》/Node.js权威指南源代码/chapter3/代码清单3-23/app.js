@@ -1,4 +1,4 @@
-﻿var i=0;
+var i=0;
 var func1=function(){
     var func2=function(){
         var func3=function(){

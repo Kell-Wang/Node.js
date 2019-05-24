@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 var func1=function(curr, prev) {
     if(Date.parse(prev.ctime)==0)
         console.log('message.txt文件被创建。');

@@ -110,3 +110,11 @@
 |aggregation (聚合/聚合查询) | aggregation pipeline (聚合管道) |
 |transactions (事务) | multi-document transactions (跨文档事务) |
 
+
+## MongoDB 安装注意事项:
+- 1、[下载地址](https://www.mongodb.com/download-center/community)
+    + tips: 默认安装包 Package 选择.msi 格式 (.msi 和 .exe 一样是可执行格式)
+- 2、安装过程中:
+    + 第二个界面选择 Complete(全部)
+    + 第三个界面: Install MongoDB as a Service 取消勾选
+    + 第四个界面: 左下角的 Install MongoDB Compass(安装 MongoDB 可视化客户端) 取消勾选(Reason: 这里会链接 MongoDB 美国的服务器)

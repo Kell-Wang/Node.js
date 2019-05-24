@@ -1,4 +1,4 @@
-﻿var domain = require('domain');
+var domain = require('domain');
 var d=domain.create();
 d.on('error',function(err){
     console.log('Domain对象捕获到错误。');

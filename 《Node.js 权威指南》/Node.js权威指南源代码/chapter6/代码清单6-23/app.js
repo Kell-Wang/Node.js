@@ -1,4 +1,4 @@
-﻿var fs=require('fs');
+var fs=require('fs');
 fs.chmod('./message1.txt',0600,function(err){//所有者可读写，其他人没有任何权限
     if(err) console.log("修改文件权限操作失败。");
     else console.log("修改文件权限操作成功。");

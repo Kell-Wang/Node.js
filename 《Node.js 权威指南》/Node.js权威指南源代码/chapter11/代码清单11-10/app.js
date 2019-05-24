@@ -1,4 +1,4 @@
-﻿var zlib=require('zlib');
+var zlib=require('zlib');
 var fs=require('fs');
 var out=fs.createWriteStream('compress.log');
 var input = 'abcdefghijklmnopqrstuvwxyz';

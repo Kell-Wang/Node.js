@@ -1,4 +1,4 @@
-﻿var http = require('http'),
+var http = require('http'),
     url = require('url');
 var server = http.createServer().listen(1337, 'localhost');
 server.on('request', function(req, res) {

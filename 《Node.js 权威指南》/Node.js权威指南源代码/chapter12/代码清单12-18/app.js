@@ -1,4 +1,4 @@
-﻿var util=require('util');
+var util=require('util');
 function testFunction(msg1,msg2){
     return msg1+msg2;
 }

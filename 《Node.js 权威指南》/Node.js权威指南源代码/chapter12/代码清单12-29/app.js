@@ -1,4 +1,4 @@
-﻿var repl = require("repl");
+var repl = require("repl");
 function testFunc(){
     msg="message";
 }

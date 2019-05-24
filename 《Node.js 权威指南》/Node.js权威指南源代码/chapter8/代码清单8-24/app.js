@@ -1,4 +1,4 @@
-﻿var http=require('http');
+var http=require('http');
 var url=require('url');
 var server = http.createServer(function(sreq, sres) {
     var url_parts = url.parse(sreq.url);

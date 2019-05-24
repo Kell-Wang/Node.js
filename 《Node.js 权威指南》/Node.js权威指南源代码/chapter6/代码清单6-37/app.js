@@ -1,4 +1,4 @@
-﻿var fs = require('fs');
+var fs = require('fs');
 var file = fs.createReadStream('./message.txt',{start:3,end:12});
 file.on('open',function(fd) {
     console.log('开始读取文件。');

@@ -1,4 +1,4 @@
-﻿var readline = require('readline');
+var readline = require('readline');
 function completer(line) {
     var completions = 'help error quit aaa bbb ccc'.split(' ');
     var hits = completions.filter(function(c) { return c.indexOf(line) == 0 });
