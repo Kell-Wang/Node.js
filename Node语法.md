@@ -25,7 +25,7 @@
          这两个方法所使用的参数字符串必须相同，才能正确地统计出开始时间和结束时间之间所经过的毫秒数。示例如下:
          ```javascript
              console.time("small loop");
-                 for(var i=0; i<100000, i++){
+                 for(var i=0; i<100000; i++){
                      ;
                  }
              console.timeEnd("small loop");
