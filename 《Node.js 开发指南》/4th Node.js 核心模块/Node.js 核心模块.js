@@ -273,7 +273,7 @@ http.createServer((req, res) => {
     let post = '';
     req.on('data', function(chunk) {
         post += chunk
-    })
+    });
     req.on('end', () => {
         post = querystring.parse(post)
         res.end(util.inspect(post))
