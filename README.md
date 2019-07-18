@@ -28,38 +28,9 @@
 - 卸载: 通过官网安装包安装的卸载方法，终端中执行下面代码：
   `rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/*/node.*}`
 - 安装:
-    + 安装 Homebrew: 
-        - 按照官网的说明安装：`https://brew.sh/`, 中间可能会让输入密码，mac 下输入密码
-          是不显示的，直接输入即可。
+    + 安装 Homebrew: 见 Miscellaneous-blog/MacOS/MacOS-操作记录.md
     + 接下来的安装教程见这里：
       https://lhajh.github.io/mac/2018/11/13/Install-node-with-homebrew.html       
- 
-
-## Homebrew 包管理器：
-- 按照官网的说明安装：`https://brew.sh/`, 中间可能会让输入密码，mac 下输入密码
-  是不显示的，直接输入即可。
-- brew search mysql     // 搜索包
-- brew install mysql    // 安装包 
-- brew info mysql       // 查看包信息，比如目前的版本，依赖，安装后注意事项等
-- brew uninstall wget   // 卸载包
-- brew list             // 显示已安装的包
-- brew –help            // 查看brew的帮助
-- brew update           // 更新， 这会更新 Homebrew 自己
-- brew outdated         // 检查过时（是否有新版本），这会列出所有安装的包里，哪些可以升级
-    + brew outdated mysql
-- brew upgrade          // 升级所有可以升级的软件
-    + brew upgrade mysql
-- brew cleanup          // 清理不需要的版本极其安装包缓存
-    + brew cleanup mysql
-
-## Macprot 包管理:
-- Macprot 与 brew 提供的功能基本一致，不过  
-
-
-
-
-
-
 
 
 
