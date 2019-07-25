@@ -2,10 +2,10 @@
  * Date: 2017-12-14
  */
 
-const http =        require("http");
-const fs =          require("fs");
+const http = require("http");
+const fs = require("fs");
 const querystring = require("querystring");
-const urlLib =      require("url");
+const urlLib = require("url");
 
 let users = {};     //
 let server = http.createServer((req, res) => {
