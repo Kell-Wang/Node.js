@@ -24,6 +24,12 @@
 6. 如果更新了 nodejs 文件需要 cmd 中 ctrl+c 停掉当前的运行状态，然后 node xxx.js 从新运行。
 
 
+### `npm install` 时 `--save-dev` 和 `--save` 的区别
+- `--save`: 把安装包添加到 package.json 文件下的 dependencies () 中
+- `--save-dev`: 安装到 devDependencies (开发时依赖)
+
+
+
 ## Mac 下安装 Node
 - 卸载: 通过官网安装包安装的卸载方法，终端中执行下面代码：
   `rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/*/node.*}`
