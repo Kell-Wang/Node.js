@@ -16,6 +16,10 @@
       `brew install yarn`
 
 
+## 初始化 node 项目：
+1. 首先使用 `npm init --yes` 初始化 package.json
+1. 使用 `npm install xxx --save-dev/--save` 来安装插件，
+
 
 
 ## 《Node.js 权威指南》第三章的方法：<node.js 基础知识>

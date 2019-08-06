@@ -25,8 +25,8 @@
 
 
 ### `npm install` 时 `--save-dev` 和 `--save` 的区别
-- `--save`: 把安装包添加到 package.json 文件下的 dependencies () 中
-- `--save-dev`: 安装到 devDependencies (开发时依赖)
+- `--save`: 把安装包添加到 package.json 内的 dependencies (运行时依赖) 中
+- `--save-dev`: 安装到 package.json 内的 devDependencies (开发时依赖) 中。
 
 
 
