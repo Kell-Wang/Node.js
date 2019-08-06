@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单的表单提交到服务器</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style type="text/css">
+        .content {
+            width:600px;  height:400px;
+            border-radius:6px;
+            background:lightcoral;
+            margin:100px auto;
+            overflow:hidden;
+        }
+        .content > p {
+            width:280px; height:40px;
+            margin:20px auto;
+            line-height:40px;
+            color:#fff; overflow:hidden;
+        }
+        .content > p > label {
+            width:80px; display: inline-block;
+        }
+        .content > p > input {
+            display:inline-block;
+            width:180px; height:38px;
+            line-height:38px;
+            border:1px solid #fff;
+            border-radius:6px; overflow:hidden;
+            background:#fff; text-indent:10px;
+        }
+        .content > p > input[type="submit"] {
+            margin-left:80px;
+            background:#47ADF6;
+            color:#fff; cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- /aaa : 为url中的pathname(路径)部分,说明了资源位于服务器的什么地方。<如果服务器并没有这个路径，也不会报错> -->
+    <form action="http://localhost:8092/aaa" method="get">
+        <div class="content">
+            <p>
+                <label>用户名:</label><input type="text" name="name" />
+            </p>
+            <p>
+                <label>密码:</label><input type="password" name="pass" />
+            </p>
+
+            <p><input type="submit" value="提交"></p>
+        </div>
+    </form>
+</body>
+</html>
