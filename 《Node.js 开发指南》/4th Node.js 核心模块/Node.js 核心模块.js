@@ -1,7 +1,11 @@
-/** 4.1.2 process:  process 是一个全局变量，即 global 对象的属性。它用于描述当前
- * Node.js 进程状态的对象，提供了一个与操作系统的简单接口。 */
-// process.argv:  [ 'C:\\Program Files\\nodejs\\node.exe',
-// 'D:\\git-clone\\Node.js\\《Node.js 开发指南》\\4th Node.js 核心模块\\Node.js 核心模块.js' ]
+/**
+ * ## 4.1.2 process:
+ * - process 是一个全局变量，即 global 对象的属性。它用于描述当前 Node.js 进程状态的
+ *   对象，提供了一个与操作系统的简单接口。
+ */
+// - process.argv:  [ 'C:\\Program Files\\nodejs\\node.exe',
+//  'D:\\git-clone\\Node.js\\《Node.js 开发指南》\\4th Node.js 核心模块
+//  \\Node.js 核心模块.js' ]
 console.log("process.argv: ", process.argv);
 
 // process.stdout
@@ -48,11 +52,11 @@ objBase.showName()
 objBase.sayHello()
 console.log(objBase)*/
 
-// ES6 类声明: 要声明一个类，首先编写 class 关键字，紧跟着的是类的名字，其他部分的语法类似于
-//  对象字面量的简写形式，但是**不需要在类的各元素之间使用逗号分隔**。
+// - ES6 类声明: 要声明一个类，首先编写 class 关键字，紧跟着的是类的名字，其他部分的
+//   语法类似于对象字面量的简写形式，但是**不需要在类的各元素之间使用逗号分隔**。
 class Base {
     constructor(name, base) {
-        this.name = name
+        this.name = name;
         this.base = base
     }
 
@@ -82,15 +86,15 @@ let emitter = new events.EventEmitter()
 // 为事件 someEvent 注册 2 个事件监听器
 emitter.on('someEvent', function(arg1, arg2){
     console.log('listener1', arg1, arg2)
-})
+});
 emitter.on('someEvent', function(arg1, arg2){
     console.log('listener2', arg1, arg2)
-})
+});
 emitter.emit('someEvent', 'byvoid', 1991)
 
 
 /** 4.4.1 fs.readFile(filename, [encoding], [callback(err, data)]) */
-let fs = require('fs')
+let fs = require('fs');
 fs.readFile('content.txt', function(err, data) {
     if (err) {
         console.log(err)
@@ -109,7 +113,11 @@ fs.readFile('content.txt', 'utf-8', function(err, data) {
 
 
 /** 4.4.3 fs.open(): */
-/** 4.4.4 fs.read(): [注: 书上不建议使用 fs.read(), 因为需要手动管理缓冲区和文件指针] */
+/**
+ * - 4.4.4 fs.read():
+ *   + [注: 书上不建议使用 fs.read(), 因为需要手动管理缓冲区和文件指针]
+ *
+ */
 // r 以读取模式打开文件
 fs.open('content.txt', 'r', function(err, fd) {
     if (err) {
@@ -117,15 +125,15 @@ fs.open('content.txt', 'r', function(err, fd) {
         return;
     }
 
-    let buf = new Buffer.alloc(8)
-    // 文件描述符(fd): 是一个非负整数，表示操作系统内核为当前进程所维护的打开文件的记录表索引。
-    // 0: offset 是 buffer 的写入偏移量。
-    // 8: length 是要从文件中读取的字节数。
-    // null: position 值为 null, 则会从当前文件指针的位置读取。
+    let buf = new Buffer.alloc(8);
+    // - 文件描述符(fd): 是一个非负整数，表示操作系统内核为当前进程所维护的打开文件的
+    //   记录表索引。
+    // - 0: offset 是 buffer 的写入偏移量。
+    // - 8: length 是要从文件中读取的字节数。
+    // - null: position 值为 null, 则会从当前文件指针的位置读取。
     fs.read(fd, buf, 0, 8, null, function(err, bytesRead, buffer) {
         if (err) {
-            console.log(err)
-            return;
+            console.log(err);
         }
 
         // bytesRead: 8
@@ -157,7 +165,7 @@ fs.open('content.txt', 'r', function(err, fd) {
 
 // http.Server 是 http 模块中的 HTTP 服务器对象，用 Node.js 做的所有基于 HTTP 协议的系
 // 统，如网站、社交应用甚至代理服务器，都是基于 http.Server 实现的。下面是一个基本的示例:
-const http = require('http')
+const http = require('http');
 
 // http.createServer 创建了一个 http.Server 的实例，将一个匿名函数作为 HTTP 请求处理函
 // 数。这个函数接收 2 个参数，分别是请求对象 (request) 和 响应对象 (response)。
@@ -165,17 +173,17 @@ const http = require('http')
 http.createServer((req, res) => {
 
     // res.writeHead 显示地写回了响应代码 200 (表示请求成功)，指定响应头为 'Cxx':'txx'
-    res.writeHead(200, {'Content-Type': 'text/html'})
+    res.writeHead(200, {'Content-Type': 'text/html'});
 
     // 写入响应体
-    res.write('<h1>Node.js</h1>')
+    res.write('<h1>Node.js</h1>');
 
     // 通过 res.end 结束并发送。
     res.end('<p>Hello World</p>')
 
     // 最后该实例还调用了 listen 函数，启动服务器并监听 2100 端口。
 }).listen(2100)
-console.log("HTTP server is listening at port 2100.")
+console.log("HTTP server is listening at port 2100.");
 
 /** (1)、http.Server 的事件: http.Server 是一个基于事件的 HTTP 服务器，所有的请求都被
  * 封装为独立的事件，开发者只需要对它的事件编写响应函数即可实现 HTTP 服务器的所有功能。它继承
@@ -227,8 +235,8 @@ server.on('request', (req, res) => {
  * parse 函数提供了这个功能，例如：
  * */
 // const http = require('http') // 上面已经引入
-const url = require('url')
-const util = require('util')
+const url = require('url');
+const util = require('util');
 
 http.createServer((req,res) => {
     res.writeHead(200, {'Content-Type': 'text/plain'})
@@ -278,7 +286,7 @@ http.createServer((req, res) => {
         post = querystring.parse(post)
         res.end(util.inspect(post))
     })
-}).listen(2500)
+}).listen(2500);
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
