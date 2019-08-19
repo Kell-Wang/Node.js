@@ -1,4 +1,3 @@
-// Created in
 const net = require('net');
 
 const PORT = 3000;
