@@ -1,9 +1,9 @@
 let toString = Object.prototype.toString;
 let isType = function(type) {
     return function(obj) {
-        return toString.call(obj) = '[object ' + type + ']';
+        return toString.call(obj);
     }
-}
+};
 let isString = isType('String');
 // let isFunction = isFunction('Function');
 
