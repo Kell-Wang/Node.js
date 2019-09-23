@@ -1,4 +1,6 @@
 # Node.js 学习
+> Node.js 创造者 Ryan Dahl (瑞安·达尔)
+
 
 ## Windows 下安装 Node
 1. Node.js中的交互式运行环境 —— REPL(Read-Eval-Print-Loop)
