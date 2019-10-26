@@ -1,115 +1,10 @@
-/**
- * ## 4.1.2 process:
- * - process 是一个全局变量，即 global 对象的属性。它用于描述当前 Node.js 进程状态的
- *   对象，提供了一个与操作系统的简单接口。
- */
-// - process.argv:  [ 'C:\\Program Files\\nodejs\\node.exe',
-//  'D:\\git-clone\\Node.js\\《Node.js 开发指南》\\4th Node.js 核心模块
-//  \\Node.js 核心模块.js' ]
-console.log("process.argv: ", process.argv);
-
-// process.stdout
-// console.log(process.stdout.write())
-
-// process.nextTick(callback)
-/*function doSomething(args, callback) {
-    somethingComplicated(args)
-    process.nextTick(callback)
-}
-
-doSomething(function onEnd() {
-    compute()
-})*/
 
 
-/** 4.2.1: util.inherits 的用法 */
-/** 20190523 现在 js 已经有内置的 class 方法了，所以这个根本用不到了 */
-/*const util = require('util')
 
-function Base() {
-    this.name = 'base'
-    this.base = 1991
-
-    this.sayHello = function() {
-        console.log('Hello ' + this.name)
-    }
-}
-
-Base.prototype.showName = function() {
-    console.log(this.name)
-}
-
-function Sub() {
-    this.name = 'sub'
-}
-
-// js 原生的写法相见:《Javascript设计模式与编程实践》\第一部分--基础知识\第2章\
-// P33-34-继承(借用其他对象的方法).js
-util.inherits(Sub, Base)
-
-let objBase = new Base()
-objBase.showName()
-objBase.sayHello()
-console.log(objBase)*/
-
-// - ES6 类声明: 要声明一个类，首先编写 class 关键字，紧跟着的是类的名字，其他部分的
-//   语法类似于对象字面量的简写形式，但是**不需要在类的各元素之间使用逗号分隔**。
-class Base {
-    constructor(name, base) {
-        this.name = name;
-        this.base = base
-    }
-
-    sayHello() {
-        console.log('Hello ' + this.name)
-    }
-}
-
-class Sub extends Base {
-    constructor(name) {
-        super(name)
-    }
-}
-
-let subInstance = new Sub("WANG")
-subInstance.sayHello()  // Hello WANG
-
-
-/** 4.3.1 事件发射器 */
-// events 模块只提供了一个对象: events.EventEmitter. EventEmitter 的核心就是事件发射
-// 与事件监听器功能的封装。 EventEmitter 的每个事件由 "一个事件名" 和 "若干个参数" 组成，
-// 事件名是一个字符串，通常表达一定的语义。对于每个事件， EventEmitter支持若干个事件监听器。
-// 当事件触发时，注册到这个事件的事件监听器被依次调用，事件参数作为回调函数参数传递。
-let events = require('events')
-let emitter = new events.EventEmitter()
-
-// 为事件 someEvent 注册 2 个事件监听器
-emitter.on('someEvent', function(arg1, arg2){
-    console.log('listener1', arg1, arg2)
-});
-emitter.on('someEvent', function(arg1, arg2){
-    console.log('listener2', arg1, arg2)
-});
-emitter.emit('someEvent', 'byvoid', 1991)
 
 
 /** 4.4.1 fs.readFile(filename, [encoding], [callback(err, data)]) */
-let fs = require('fs');
-fs.readFile('content.txt', function(err, data) {
-    if (err) {
-        console.log(err)
-    } else {
-        // console.log("data normal format: ", data)
-    }
-})
 
-fs.readFile('content.txt', 'utf-8', function(err, data) {
-    if (err) {
-        console.log(err)
-    } else {
-        // console.log("data binary: ", data)
-    }
-})
 
 
 /** 4.4.3 fs.open(): */
@@ -119,30 +14,6 @@ fs.readFile('content.txt', 'utf-8', function(err, data) {
  *
  */
 // r 以读取模式打开文件
-fs.open('content.txt', 'r', function(err, fd) {
-    if (err) {
-        console.log(err)
-        return;
-    }
-
-    let buf = new Buffer.alloc(8);
-    // - 文件描述符(fd): 是一个非负整数，表示操作系统内核为当前进程所维护的打开文件的
-    //   记录表索引。
-    // - 0: offset 是 buffer 的写入偏移量。
-    // - 8: length 是要从文件中读取的字节数。
-    // - null: position 值为 null, 则会从当前文件指针的位置读取。
-    fs.read(fd, buf, 0, 8, null, function(err, bytesRead, buffer) {
-        if (err) {
-            console.log(err);
-        }
-
-        // bytesRead: 8
-        // console.log('bytesRead: ' + bytesRead)
-        // buffer: <Buffer e5 af 84 e7 94 9f e5 bc>
-        // console.log('buffer:', buffer)
-    })
-
-})
 
 
 /**
