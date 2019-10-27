@@ -111,11 +111,11 @@
       具体细节我们在 "附录A" 中讨论，在这里我们只介绍 util.inherits 的用法。
     + util.inherits 的用法: 
       ```js
-        const util = require('util')
+        const util = require('util');
 
         function Base() {
-            this.name = 'base'
-            this.base = 1991
+            this.name = 'base';
+            this.base = 1991;
 
             this.sayHello = function() {
                 console.log('Hello ' + this.name)
@@ -123,7 +123,7 @@
         }
         Base.prototype.showName = function() {
             console.log(this.name)
-        }
+        };
 
         function Sub() {
             this.name = 'sub'
@@ -132,11 +132,11 @@
         // - js 原生继承的写法见: F:\Github-Clone\JS-book-learning\JS-继承.md
         // - inherits() 实现原理见: Programming-Video-Learning-W\珠峰培训\
         //   05_Node.js-张仁阳\05_正式课实录\events.js
-        util.inherits(Sub, Base)
+        util.inherits(Sub, Base);
 
-        let objBase = new Base()
-        objBase.showName()
-        objBase.sayHello()
+        let objBase = new Base();
+        objBase.showName();
+        objBase.sayHello();
         console.log(objBase)
       ```
 - 4.2.2 `util.inspect`
@@ -152,8 +152,8 @@
       支持若干个事件监听器。当事件触发时，注册到这个事件的事件监听器被依次调用，事件参数作
       为回调函数参数传递。
       ```js
-        let events = require('events')
-        let emitter = new events.EventEmitter()
+        let events = require('events');
+        let emitter = new events.EventEmitter();
 
         // 为事件 someEvent 注册 2 个事件监听器
         emitter.on('someEvent', function(arg1, arg2){
@@ -217,7 +217,7 @@
     + ```js
         fs.open('content.txt', 'r', function(err, fd) {
             if (err) {
-                console.log(err)
+                console.log(err);
                 return;
             }
 
