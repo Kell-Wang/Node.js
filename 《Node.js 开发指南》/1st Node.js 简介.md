@@ -3,7 +3,7 @@
 - 1.1 Node.js 是什么？
     + Node.js 不是一种语言，与 PHP、Python、Perl、Ruby、的 "既是语言也是平台",不同。 Node.js 也不是一个
       JavaScript 框架，不同于 CakePHP、Django、Rails。 Node.js 更不是浏览器端的库，不能与 jQuery、Extjs
-      相提并论。 Node.js 是一个让 JavaScript 运行再服务端的开发平台，它让 JavaScript 成为脚本语言世界的一等
+      相提并论。 Node.js 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为脚本语言世界的一等
       公民，在服务端堪与 PHP、Python、Rerl、Ruby 平起平坐。
 
 - 1.2 Node.js 可以做什么？
