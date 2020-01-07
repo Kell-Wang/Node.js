@@ -9,9 +9,9 @@
     + 4.2.1 `util.inherits`
     + 4.2.2 `util.inspect`
 - 4.3 事件驱动 `events`
-    + 4.3.1 时间发射器
+    + 4.3.1 事件发射器
     + 4.3.2 error 事件
-    + 4.3.3 继承 `EventEmitters`      
+    + 4.3.3 继承 `EventEmitter      
 - 4.4 文件系统 `fs`
     + 4.4.1 `fs.readFile`
     + 4.4.2 `fs.readFileSync`
@@ -36,6 +36,7 @@
 - Node.js 中的全局对象是 `global`, 所有全局变量 (除了 global 本身外) 都是 global 对象
   的属性。我们在 Node.js 中能够直接访问到的对象通常都是 global 属性，如 console,process 等。
 - 4.1.1 全局对象与全局变量
+    
     + global 最根本的作用是作为全局变量的宿主。
 - 4.1.2 `process`
      + process 是一个全局变量，即 global 对象的属性。它用于描述当前 Node.js 进程状态的
@@ -165,7 +166,8 @@
         emitter.emit('someEvent', 'byvoid', 1991)
       ```
 - 4.3.2 error 事件
-- 4.3.3 继承 `EventEmitters` 
+- 4.3.3 继承 `EventEmitter` 
+    
     + 大多数时候我们不会直接使用 EventEmitter，而是在对象中继承它。包括 fs、net、http 
       在内的，只要是支持事件响应的核心模块都是 EventEmitter 的子类。
     + 为什么要这样做呢？原因有两点。首先，具有某个实体功能的对象实现事件符合语义，事件的监听
@@ -198,7 +200,7 @@
                 // console.log("data binary: ", data)
             }
         });
-      ```      
+      ```
 - 4.4.2 `fs.readFileSync` : 同步方法省略
 - 4.4.3 `fs.open`
     + **fs.open(path, flags, [mode], [callback(err, fd)])** 是 POSIX open 函数的
@@ -238,7 +240,7 @@
                 // console.log('buffer:', buffer)
             })
         });
-      ```      
+      ```
 - 4.4.4 `fs.read`
     + [注: 书上不建议使用 fs.read(), 因为需要手动管理缓冲区和文件指针]
     + fs.read(fd, buffer, offset, length, position, [callback(err,bytesRead, buffer)])
@@ -260,10 +262,26 @@
     + (3)、获取 GET 请求内容
     + (4)、获取 POST 请求内容
     + (5)、http.ServerResponse (http.服务器响应)
-- 4.5.2 HTTP 客户端
+
+- 4.5.2 HTTP 客户端: 
+    + http 模块提供了两个函数 http.request 和 http.get，功能是作为客户端向 HTTP 
+      服务器发起请求
+    + http.request(options, callback) 发起 HTTP 请求。 接受 2 个参数:
+       - option 是一个类似关联数组的对象，表示请求的参数。option 常见的参数如下:
+           + host: 请求网站的域名或 IP 地址。
+           + port: 请求网站的端口，默认 80。
+           + method: 请求方法，默认是 GET。
+           + path: 请求的相对于根的路径，默认是“ / ”。 QueryString 应该包含在其中。
+               例如 /search?query=byvoid 。
+           + headers: 一个关联数组对象，为请求头的内容。
+       - callback 是请求的回调函数。
+           + callback 传递一个参数，为 http.ClientResponse 的实例。
+       - http.request 返回一个 http.ClientRequest 的实例。
+    + http.get(options, callback) http 模块还提供了一个更加简便的方法用于处理 GET 请
+       求: http.get. 它是 http.request 的简化版，唯一的区别在于 http.get 自动将请求
+       方法设为了 GET 请求，同时不需要手动调用 req.end()
     + (1)、http.ClientRequest
     + (2)、http.ClientResponse
-
 #### 4.6 参考资料
 
 
