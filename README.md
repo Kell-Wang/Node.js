@@ -1,11 +1,8 @@
 # Node.js 学习
 > Node.js 创造者 Ryan Dahl (瑞安·达尔)
 
-## Notes 
-- 单线程: Single thread 
-- 多进程: multi-Progress 
-
-
+ 
+  
 ## Windows 下安装 Node
 1. Node.js中的交互式运行环境 —— REPL(Read-Eval-Print-Loop)
   点击运行输入 cmd 进入 cmd 程序输入 "node" 按下回车即进入 REPL 运行环境，命令行中将
