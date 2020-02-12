@@ -39,7 +39,7 @@
             } else {
                 console.log(data);
             }
-        })
+        });
         console.log("end.");
       ```
 
@@ -78,6 +78,11 @@
     * Node.js 的包是一个目录，其中包含一个 JSON 格式的包说明文件 package.json。严格符合
       CommonJS 规范的包应该具备以下特征:
         + `package.json` 必须在包的顶层目录下
+            - `package.json` 此文件被 npm 用于存储项目的元数据，以便将此项目发布为npm模块.
+                + 怎么创建 package.json 文件?
+                + 答: 在 cmd 进入到相应的文件夹中，然后输入 `npm init`
+                  看到提示可以一直下一步便可以创建一个默认的 package.json 文件，
+                          
         + `bin (binary)` 目录下放 "二进制文件"
         + `lib (library 文库)` 目录下放 "javascript 代码"
         + `doc (document)` 目录下放 "文档"
