@@ -75,23 +75,33 @@
     + (2) 通过 brew 安装的 Node.js 通过运行
       `brew uninstall node` / `brew uninstall --force node` 命令来进行卸载. 
 - (2) 安装 NVM 
-    + 2.在安装 NVM 之前还需要一个 C++ 编译器，在 Mac 上可以安装 `Xcode命令行工具`
-      (如已安装请忽略)。 <br/>
-      `xcode-select -install` <br/>
-      然后可以使用 cURL 或 Wget 安装 NVM，命令如下: <br/>
-      `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`
-      <br/>或者 <br/>
-      `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`
-    + **注意: 请访问 `https://github.com/creationix/nvm`** 
-      (Tip: creation) 查看当前最新版本.
-    + Notice: 如果在安装的过程出现 如下提示:
+    + (01) 在安装 NVM 之前还需要一个 `C++` 编译器，在 Mac 上使用以下命令
+      ```shell
+        xcode-select -install
+      ```
+      安装 `XCode's Command line tools (Xcode 的命令行工具)`(如已安装请忽略).
+      
+      然后可以使用 cURL 或 Wget 安装 NVM，命令如下:
+      ```shell
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+      ```
+      或者
+      ```shell
+        wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+      ```
+    + **Tip: 请访问 `https://github.com/creationix/nvm`** (Tip: creation)
+      查看当前最新版本.
+    + (02) Notice: 如果在安装的过程出现 如下提示:
       ```shell
         # 将 nvm 源字符追加到 /Users/WANG/.bash_profile
         => Appending nvm source string to /Users/WANG/.bash_profile
+        
         # 将 bash_completion 源字符追加到 /Users/WANG/.bash_profile
         => Appending bash_completion source string to /Users/WANG/.bash_profile
+        
         # env: 节点: 无此文件或目录
         env: node: No such file or directory
+        
         # 关闭并重新打开终端以开始使用 nvm 或运行以下命令以立即使用它:
         => Close and reopen your terminal to start using nvm or run the following to use it now:
         export NVM_DIR="$HOME/.nvm"
@@ -99,27 +109,79 @@
         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
       ```
       按上面的提示 `关闭并重新打开终端以开始使用 nvm 或运行以下命令以立即使用它:`
-      从新打开终端, 输入下面的 `export......` 命令, 回车即可.
-
-    + 输入以下命令: `command -v nvm` <br/>
-      如果安装成功会输出 "nvm"，如果出现 `nvm: command not found`，则可能有以下原因:
+      从新打开终端, 输入以下命令:
+      
+      ```shell
+        # nvm
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+      ```
+      回车即可.
+      
+      我们利用命令: `open ~/.bash_profile`, 打开 `~/.bash_profile` 文件可以看到, 
+      里面的内容就是上面一段代码.
+      
+    + (03) Question: 执行完上面的 Notice 步骤后, 在命令行中输入
+      ```shell
+        command -v nvm
+      ```
+      后, 输出 `nvm` 的提示, 也可以正常使用; 但是当我完全退出 `iTerm`
+      再次打开后, 输入 `Command -v nvm` 便会再次输出:
+      `env: node; No such file or directory`, 在折腾了半个小时之后,
+      终于找到问题出在哪里了.
+    
+      原因是我在下午配置了 `iTerm`,(配置笔记见仓库:
+      `Miscellaneous-blog/操作系统/MacOS/MacOS下安装iTerm并更该主题.md`),
+      在这里我更改了 Mac 默认的的 `bash` 命令行工具改为 `zsh`, 安装完 `zsh` 之后,
+      便会生成 `.zshrc` 文件, 完整路径是: `/Users/WANG/.zshrc`;
+    
+      `nvm` 安装时, 默认是把上面的:
+      ```shell
+        # nvm
+        export NVM_DIR="$HOME/.nvm"
+        ...
+        ...
+      ```
+      写入到 `/Users/WANG/.bash_profile`, 但是我们已经更该默认的 `bash` 为 `zsh`,
+      所以我们做下面的操作把上面的代码添加到 `zsh` 中:
+      ```shell
+        # 打开 .zshrc 
+        open ~/.zshrc
+    
+        # 复制上面的 export NNVM_DIR...... 追加到文件下面
+    
+        # 刷新配置
+        source ~/.zshrc
+      ```
+      完成后, 完全关闭 `iTerm` 再次打开, 输入 `command -v nvm` 便会正常出现 `nvm`
+      的提示了. 
+    
+    + (04) 输入以下命令:
+      ```shell
+        command -v nvm
+      ```
+      如果安装成功会输出 `nvm` 作为提示, 如果出现 `nvm: command not found`,
+      则可能是下面的原因:
         - 安装时系统缺少 `.bash_ profile` 文件，使用 `touch ~/.bash_ profile` 命令
           创建所需文件并重新安装 NVM;
         - 重启命令行工具，再次尝试输入该命令。
         - 如果仍然提示安装失败，请打开 `.bash_ profile` 文件并添加以下代码: 
-          `source ~/.bashrc`
-    + 安装完成后发发现使用 `nvm install stable` 安装 node 速度巨慢, 原因大家都知道...
-      我大天朝的国情.
-      
-      接下来, 切换 nvm 的镜像到淘宝镜像 (nvm, npm 默认都是从国外的源获取和下载包信息.)
+      `source ~/.bashrc`.
+        - Tip: 出现 `nvm: command not found` 这种错误在网上出现的最多,
+          请自行 `google` 便可.
+    
+    + (05) 安装完成后发发现使用 `nvm install stable` 安装 node 速度巨慢, 
+      原因大家都知道...我大天朝的国情... 接下来, 切换 nvm 的镜像到淘宝镜像
+      (nvm, npm 默认都是从国外的源获取和下载包信息.)
       
       建议把环境变量 `NVM_NODEJS_ORG_MIRROR` 加入到 `.bash_profile` 文件中:
       ```base
         # nvm
         export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
       ```
-  [参考文章来源](https://juejin.im/entry/5d2d17905188251b1b1ff17a)
-    
+      [参考文章来源](https://juejin.im/entry/5d2d17905188251b1b1ff17a)
+  
 - (3) 安装并切换不同 Node.js 版本
     + 可能用到的命令如下:
       ```shell
@@ -170,13 +232,3 @@
         -  增加 `registry=https://registry.npm.taobao.org` 即可。
     + 这样, 我们可以使用淘宝镜像还不用更换成`cnpm`, 虽然实际都是使用的是淘宝镜像.
        最后附上淘宝镜像官网地址：`http://npm.taobao.org/`
-
-
-
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
