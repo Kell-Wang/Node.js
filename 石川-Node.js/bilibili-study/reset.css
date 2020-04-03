@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video { 
+    margin: 0; padding: 0; border: 0; font: inherit; 
+    font-size: 100%; vertical-align: baseline; }
+
+body, button, input, select, textarea{
+    font-family: "PingFangSC","helvetica neue","hiragino sans gb","arial",
+        "microsoft yahei ui","microsoft yahei","simsun","sans-serif";
+}
+
+ol, ul { list-style: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+a{text-decoration:none;}
+a:hover{text-decoration:none;}
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+q, blockquote { quotes: none; }
+a img { border: none; }
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, 
+section, summary { display: block; }
+input{ margin:0; padding:0; border:0; outline: none;}
+textarea{ margin:0; padding:0; border:0; outline: none;}
+select{margin:0; padding:0; border:0; outline: none;}
+
+
+
+body{
+    background:#f0f2f6;  color:#232323;
+    font:14px/1.5 "PingFangSC","helvetica neue","hiragino sans gb","arial",
+        "microsoft yahei ui","microsoft yahei","simsun","sans-serif";
+}
+
+
+/* a标签 */
+a{
+    text-decoration:none; color:#232323;
+    font:14px/1.5 "PingFangSC","helvetica neue","hiragino sans gb","arial",
+        "microsoft yahei ui","microsoft yahei","simsun","sans-serif";
+}
+
+/*input*/
+input{
+    border: none;
+    -moz-appearance:none;
+    -webkit-appearance : none ;/*解决ios上按钮的圆角问题*/
+    border-radius: 0;/*解决ios上输入框圆角问题*/
+    outline:medium;/*去掉鼠标点击的默认黄色边框*/
+    background-color: transparent;
+}
+
+
+/*opacity*/
+.opacity-0 {opacity:0;}
+.opacity-02{opacity:.2;}
+.opacity-04{opacity:.4;}
+.opacity-06{opacity:.6;}
+.opacity-08{opacity:.8;}
+.opacity-1 {opacity:1;}
+
+/* left - bottom */
+.left-0{left: 0;}
+.right-0{right: 0;}
+.bottom-0{bottom: 0;}
+
+
+/* margin-auto */
+.margin-auto{margin-left:auto;margin-right:auto;}
+
+
+/* background-color */
+.white-bg       {background-color:#fff;}
+.green-bg       {background:darkseagreen;}
+.grey-bg        {background:#6e6e6e;}
+.coral-bg       {background:coral;}
+.red-bg         {background:#fe4b4e}
+.blue-bg        {background: #1198e3}
+.light-green-bg {background:#c0e8d0;}
+.light-coral-bg {background-color:lightcoral}
+.light-grey-bg  {background:#f0f0f0;}
+.light-blue-bg  {background:lightskyblue;}
+
+
+
+
+/* 正向朝左三角形 Triangle up left : 在主体(main)中的header中使用 */
+.triangle-up-left{
+    width:0; height:0;
+    /* 注释代码为讲解代码
+     border-bottom: 30px solid transparent;
+     border-left: 28px solid red;
+     border-right: 28px solid red;
+     border-top: 30px solid #92c89f;*/
+    border-bottom: 60px solid #d8e4f9;
+    border-left: 25px solid transparent;
+}
+
+/* 向下三角形(input标签的后的下拉三角) triangle down */
+.triangle-down{
+    width:0;
+    height:0;
+    position:absolute;
+    border-top: 12px solid #6d6d6d;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    top:14px;
+    right:9px;
+}
+
+
+
+/* cross X号 */
+.grey-cross-icon::before, .grey-cross-icon::after {
+    content: '';        position: absolute;
+    height: 1px;        width: 16px;
+    top: 10px;          left: 2px;
+    display: block;     background:#6e6e6e;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+.grey-cross-icon::before{ transform: rotate(-45deg); }
+.grey-cross-icon::after{ transform: rotate(45deg);}
+
