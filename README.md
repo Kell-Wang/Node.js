@@ -7,6 +7,7 @@
 3. **使用 `NVM` 控制 `Node` 的版本**
     + Note: 不管是 Windows 还是 MacOS 都推荐使用 `NVM` 来安装 `Node`
 4. `npm install` 时 `--save-dev` 和 `--save` 的区别
+5. 清除代理(proxy), 升级 `npm` 和把淘宝镜像还原成 `npm` 
 
 ## 生词 (New Words)
 
@@ -221,6 +222,62 @@
   ```
 
 ### 4. `npm install` 时 `--save-dev` 和 `--save` 的区别
-- `--save`: 把安装包添加到 package.json 内的 dependencies (运行时依赖) 中
-- `--save-dev`: 安装到 package.json 内的 devDependencies (开发时依赖
-  development dependency) 中。
+- `--save`: 把安装包添加到 `package.json` 内的 dependencies (运行时依赖) 中
+- `--save-dev`: 安装到 `package.json` 内的 devDependencies (开发时依赖
+  development dependency) 中.
+
+### 5. 清除代理(proxy), 升级 `npm` 和把淘宝镜像还原成 `npm` 
+- 添加此笔记的原因是, 在学习 Vue 文档时, 创建的展示项目
+  `vue-document-learning-example` 半个月没有启动, 当再次启动的时候报这个错误,
+  ```
+    stack FetchError: request to https://registy.npm.taobao.org/lodash failed, 
+    reason: connect ECONNREFUSED 120.240.95.35:443
+
+    ERROR  TypeError: defaultsDeep is not a function
+  ```
+  这里有 2 个错误, `connect ECONNREFUSED`(连接遭拒绝) 和 `defaultsDeep`
+  不是一个函数, 我当时认为是 lodash  的问题, 而且也有一点点怀疑是 taobao
+  镜像的原因.
+
+  刚开始直接搜上面的第一行错误没有找到需要的答案, 我在 lodash 的 github
+  仓库 README 中看到安装的代码
+  ```shell
+    # 升级 npm 的 shell 命令
+    npm i -g npm 
+
+    npm install lodash
+  ```
+  我进入到项目, 把 lodash 卸载后, 然后我执行 `npm i -g npm` 时却一直不能成功,
+  我就怀疑是我的网络的原因, 但是当我在桌面新建文件, 试着利用 vue CLI3.0 创建了一个
+  Vue 项目时却是正常的, 那就有可能是 taobao 的镜像的问题了. 
+  
+  *此时, 我已经气炸了, 这 TM 都是什么鬼玩意, 今天这问题, 明天那问题......*
+
+  但是抱怨完还是要解决问题, 转而我想如果是 `connect ECONNREFUSED` 倒不如直接搜这个,
+  我在 google 搜索, 然后跳转到此
+  [stack overflow 页面](https://stackoverflow.com/questions/42371380/npm-err-error-connect-econnrefused).
+  , 我按照其中高票的回答, 在命令行中设置如下:
+  ```shell
+    npm config set proxy null
+    npm config set https-proxy null
+    npm config set registry http://registry.npmjs.org/
+  ```
+  前两行是移除设置的代理, 最后一行是把 npm 下载指向官方的包注册表.
+
+  上面 3 个设置都可以在 `.npmrc` (Shell: `open ~/.npmrc`) 中查看,
+  实际上我在本机上并没有设置 proxy 代理, 但 npm 镜像是在上面 `3.2 - (5)`
+  中设置成了 taobao npm 镜像, 然后更改完毕后, 再次执行 `npm i -g npm` 升级
+  npm 的 shell 命令, 就正常了.
+
+  **But, but, but** 解决了 lodash 和 lodash.deaultsdeep 的问题后, 又出来
+  `neo-async` 问题, 我安装了这个包之后还是不能正常启动...... 最后,
+  我只能把此项目下 `node_modules` 整个文件夹删除了, 然后进入项目中使用 
+  `npm install` 重新安装依赖包后可以了, 我想静静......
+
+  <i style="color:orange;">Additional Info:</i> 到此时,
+  虽然仍没有彻底找出问题的根源, 但也不要忘记此时已经把 npm 安装依赖包改回了官方注册表,
+  如果仍然想使用 taobao 镜像, 需要重新设置 `3.2 - (5)`.
+
+  其次, 通过使用 Vue CLI3.0 脚手架创建 Vue 模板的话, 由于配置是写在 `.vuerc`
+  (shell: `open ~/.vuerc`) 中的, 所以此时我们使用 `vue create xxx` 仍然使用的是
+  taobao 镜像. 更多内容见: `Vue-learning/Vue-官网文档学习/Vue-安装.md`
