@@ -9,7 +9,8 @@ http.createServer((req, res) => {
 
     // - 判断 url 中是否有 ?, 目的是排出 favicon.ico
     if (req.url.indexOf("?") !== -1) {
-        // - split() 基于指定的分隔符将一个字符串分割成多个子字符串，并将结果放在一个数组中。
+        // - split() 基于指定的分隔符将一个字符串分割成多个子字符串,
+        //   并将结果放在一个数组中. 简记为: 将字符串转换成数组
         let arr = req.url.split("?");
         // arr[0]: /aaa
         let url = arr[0];

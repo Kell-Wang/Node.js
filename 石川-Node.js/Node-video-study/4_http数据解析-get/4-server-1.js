@@ -1,17 +1,14 @@
 const http = require("http");
 
+const queryString = require("querystring");
+
+
 // req.url => "/aaa?user=blue&pass=123456"
-// /aaa
-// user=blue&pass=123456
-
-const queryString = require("Node.js/石川-Node.js/bilibili-study/4_http数据解析-get/querystring");
-
 
 http.createServer((req, res) => {
     let GET = {};
 
     if (req.url.indexOf("?") !== -1) {
-        // split() 基于指定的分隔符将一个字符串分割成多个子字符串，并将结果放在一个数组中。
         let arr = req.url.split("?");
         let url = arr[0];
 
