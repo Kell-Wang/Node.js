@@ -228,7 +228,7 @@
 
 ### 5. 清除代理(proxy), 升级 `npm` 和把淘宝镜像还原成 `npm` 
 - 添加此笔记的原因是, 在学习 Vue 文档时, 创建的展示项目
-  `vue-document-learning-example` 半个月没有启动, 当再次启动的时候报这个错误,
+  `vue-document-example` 半个月没有启动, 当再次启动的时候报这个错误,
   ```
     stack FetchError: request to https://registy.npm.taobao.org/lodash failed, 
     reason: connect ECONNREFUSED 120.240.95.35:443
